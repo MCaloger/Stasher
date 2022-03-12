@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import javax.validation.constraints.Null;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -72,12 +71,20 @@ public class SecuredServiceImpl implements SecuredService{
         } catch(NullPointerException exception) {
             throw new Exception("Message is missing, password was incorrect, or is no longer available.");
         } catch(Exception exception) {
-            throw new Exception("An error occurred.");
+            throw new Exception("Message is missing, password was incorrect, or is no longer available.");
         } finally {
             if(securedModel != null && securedModel.getId() != null) {
                 deleteSecured(securedModel.getId());
             }
         }
+    }
+
+    public boolean checkIfSecuredExists(Long id) {
+        return securedRepository.existsById(id);
+    }
+
+    public boolean checkIfSecuredExists(String code) {
+        return securedRepository.existsByCode(code);
     }
 
     public void deleteSecured(Long id) {

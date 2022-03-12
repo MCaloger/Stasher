@@ -2,8 +2,12 @@ package com.caloger.stasher.Secret.Controller;
 
 import com.caloger.stasher.Secret.Model.SecretModel;
 import com.caloger.stasher.Secret.Service.SecretService;
+import com.caloger.stasher.Secured.Model.Read.SecuredReadResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/secret")
@@ -21,8 +25,8 @@ public class SecretController {
         return new SecretModel();
     }
 
-    @PostMapping("/new")
-    public String createSecret(@RequestBody SecretModel secret) {
-        return "";
-    }
+//    @PostMapping("/new")
+//    public ResponseEntity<SecretModel> createSecret(@Valid @RequestBody SecretModel secret) {
+//
+//    }
 }

@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface SecuredRepository extends CrudRepository<SecuredModel, Long> {
     public SecuredModel findByCode(String code);
+    public boolean existsByCode(String code);
 }

@@ -43,7 +43,6 @@ public class SecuredController {
                     securedService.readSecuredByCodeWithPassword(code, securedReadRequestModel.getPassword()));
             return new ResponseEntity(securedReadResponseModel, HttpStatus.OK);
         } catch(Exception exception) {
-            exception.printStackTrace();
             securedReadResponseModel.setMessage(exception.getMessage());
             return new ResponseEntity(securedReadResponseModel, HttpStatus.BAD_REQUEST);
         }

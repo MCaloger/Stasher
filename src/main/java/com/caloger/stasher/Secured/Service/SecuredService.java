@@ -19,4 +19,8 @@ public interface SecuredService {
     public String readSecuredByCodeWithPassword(String code, String password) throws Exception;
 
     public void deleteSecured(Long id);
+
+    public boolean checkIfSecuredExists(Long id);
+
+    public boolean checkIfSecuredExists(String code);
 }

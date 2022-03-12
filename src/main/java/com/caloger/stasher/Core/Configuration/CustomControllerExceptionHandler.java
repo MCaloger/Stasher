@@ -3,6 +3,7 @@ package com.caloger.stasher.Core.Configuration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,5 +40,11 @@ public class CustomControllerExceptionHandler extends ResponseEntityExceptionHan
         body.put("errors", errors);
 
         return new ResponseEntity<>(body, httpHeaders, status);
+    }
+
+    protected ResponseEntity<Object> handleHttpMediaTypeNotSupported(
+            HttpMediaTypeNotSupportedException httpMediaTypeNotSupportedException, HttpHeaders httpHeaders,
+            HttpStatus status, WebRequest webRequest) {
+        return new ResponseEntity<>("Error", httpHeaders, status);
     }
 }
