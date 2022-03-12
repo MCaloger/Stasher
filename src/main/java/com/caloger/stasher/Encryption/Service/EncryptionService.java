@@ -1,7 +1,9 @@
 package com.caloger.stasher.Encryption.Service;
 
-import com.caloger.stasher.Encryption.Model.EncryptedBundle;
+import com.caloger.stasher.Encryption.Model.EncryptedProperties;
 
+import com.caloger.stasher.Encryption.Model.EncryptedPropertiesImpl;
+import com.caloger.stasher.Secured.Model.SecuredModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,9 @@ public class EncryptionService {
     @Value("${ALGORITHM}")
     private String ALGORITHM;
 
+    @Value("${INITIALIZATION_VECTOR_LENGTH}")
+    private int INITIALIZATION_VECTOR_LENGTH;
+
     private SecretKey generateKey() throws NoSuchAlgorithmException {
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         keyGenerator.init(this.KEY_LENGTH);
@@ -46,10 +51,14 @@ public class EncryptionService {
         return secret;
     }
 
-    private IvParameterSpec generateInitializationVector() {
-        byte[] initializationVector = new byte[16];
-        new SecureRandom().nextBytes(initializationVector);
-        return new IvParameterSpec(initializationVector);
+    private byte[] generateInitializationVectorSeed() {
+        byte[] initializationVectorSeed = new byte[INITIALIZATION_VECTOR_LENGTH];
+        new SecureRandom().nextBytes(initializationVectorSeed);
+        return initializationVectorSeed;
+    }
+
+    private IvParameterSpec generateInitializationVectorFromSeed(byte[] seed) {
+        return new IvParameterSpec(seed);
     }
 
     private String generateSalt() {
@@ -59,23 +68,25 @@ public class EncryptionService {
     }
 
     private String encrypt(String input, SecretKey key,
-                                 IvParameterSpec iv) throws NoSuchPaddingException, NoSuchAlgorithmException,
+                                 byte[] initializationVectorSeed) throws NoSuchPaddingException, NoSuchAlgorithmException,
             InvalidAlgorithmParameterException, InvalidKeyException,
             BadPaddingException, IllegalBlockSizeException {
 
         Cipher cipher = Cipher.getInstance(this.ALGORITHM);
-        cipher.init(Cipher.ENCRYPT_MODE, key, iv);
+        IvParameterSpec initializationVector = generateInitializationVectorFromSeed(initializationVectorSeed);
+        cipher.init(Cipher.ENCRYPT_MODE, key, initializationVector);
         byte[] cipherText = cipher.doFinal(input.getBytes());
         return Base64.getEncoder()
                 .encodeToString(cipherText);
     }
 
     private String decrypt(String cipherText, SecretKey key,
-                                 IvParameterSpec initializationVector) throws NoSuchPaddingException, NoSuchAlgorithmException,
+                                 byte[] initializationVectorSeed) throws NoSuchPaddingException, NoSuchAlgorithmException,
             InvalidAlgorithmParameterException, InvalidKeyException,
             BadPaddingException, IllegalBlockSizeException {
 
         Cipher cipher = Cipher.getInstance(this.ALGORITHM);
+        IvParameterSpec initializationVector = generateInitializationVectorFromSeed(initializationVectorSeed);
         cipher.init(Cipher.DECRYPT_MODE, key, initializationVector);
         byte[] plainText = cipher.doFinal(Base64.getDecoder()
                 .decode(cipherText));
@@ -95,7 +106,7 @@ public class EncryptionService {
      * @throws BadPaddingException
      * @throws InvalidKeyException
      */
-    public EncryptedBundle encryptMessage(String message, String unencryptedPassword) throws NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
+    public EncryptedProperties encryptMessage(String message, String unencryptedPassword) throws NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
         // Generate salt
         String salt = generateSalt();
 
@@ -103,19 +114,19 @@ public class EncryptionService {
         SecretKey secretKey = generateSecretKeyFromPassword(unencryptedPassword, salt);
 
         // Generate an initialization vector
-        IvParameterSpec initializationVector = generateInitializationVector();
+        byte[] initializationVectorSeed = generateInitializationVectorSeed();
 
         // Encrypt the message
-        String encryptedMessage = encrypt(message, secretKey, initializationVector);
+        String encryptedMessage = encrypt(message, secretKey, initializationVectorSeed);
 
-        // Return the encrtyped bundle
-        return new EncryptedBundle(encryptedMessage, secretKey, initializationVector, salt);
+        // Return the encrypted bundle
+        return new EncryptedPropertiesImpl(encryptedMessage, secretKey, initializationVectorSeed, salt);
     }
 
     /**
      * Decrypt with provided password and EncryptedBundle.
      * @param password
-     * @param encryptedBundle
+     * @param encryptedProperties
      * @return
      * @throws InvalidAlgorithmParameterException
      * @throws NoSuchPaddingException
@@ -125,11 +136,22 @@ public class EncryptionService {
      * @throws InvalidKeyException
      * @throws InvalidKeySpecException
      */
-    public String decryptMessage(String password, EncryptedBundle encryptedBundle) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InvalidKeySpecException {
+    public String decryptMessage(String password, EncryptedProperties encryptedProperties) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InvalidKeySpecException {
         // Build key from provided password and saved salt
-        SecretKey secretKey = generateSecretKeyFromPassword(password, encryptedBundle.getSalt());
+        SecretKey secretKey = generateSecretKeyFromPassword(password, encryptedProperties.getSalt());
 
         // Decrypt message
-        return decrypt(encryptedBundle.getEncryptedMessage(), secretKey, encryptedBundle.getInitializationVector());
+        return decrypt(encryptedProperties.getEncryptedMessage(), secretKey, encryptedProperties.getInitializationVectorSeed());
+    }
+
+    public String decryptMessage(String password, SecuredModel securedModel) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InvalidKeySpecException {
+        EncryptedProperties encryptedProperties = new EncryptedPropertiesImpl(securedModel.getEncryptedMessage(),
+                securedModel.getInitializationVectorSeed(), securedModel.getSalt());
+
+        // Build key from provided password and saved salt
+        SecretKey secretKey = generateSecretKeyFromPassword(password, encryptedProperties.getSalt());
+
+        // Decrypt message
+        return decrypt(encryptedProperties.getEncryptedMessage(), secretKey, encryptedProperties.getInitializationVectorSeed());
     }
 }

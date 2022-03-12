@@ -1,6 +1,6 @@
 package com.caloger.stasher.Encryption.Service;
 
-import com.caloger.stasher.Encryption.Model.EncryptedBundle;
+import com.caloger.stasher.Encryption.Model.EncryptedProperties;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,6 @@ import java.security.spec.InvalidKeySpecException;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 import static org.assertj.core.api.BDDAssertions.then;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class EncryptionServiceTest {
@@ -36,12 +35,12 @@ class EncryptionServiceTest {
         String password = "Test";
 
         // when
-        EncryptedBundle encryptedBundle = encryptionService.encryptMessage(message, password);
+        EncryptedProperties encryptedProperties = encryptionService.encryptMessage(message, password);
 
         // then
-        then(encryptedBundle.getEncryptedMessage()).isNotBlank();
-        then(encryptedBundle.getEncryptedMessage()).isNotEmpty();
-        then(encryptedBundle.getEncryptedMessage()).isNotNull();
+        then(encryptedProperties.getEncryptedMessage()).isNotBlank();
+        then(encryptedProperties.getEncryptedMessage()).isNotEmpty();
+        then(encryptedProperties.getEncryptedMessage()).isNotNull();
     }
 
     @DisplayName("Given message and password, Decrypt with correct password")
@@ -52,14 +51,14 @@ class EncryptionServiceTest {
         String password = "Test";
 
         // when
-        EncryptedBundle encryptedBundle = encryptionService.encryptMessage(message, password);
-        String unEncryptedString = encryptionService.decryptMessage(password, encryptedBundle);
+        EncryptedProperties encryptedProperties = encryptionService.encryptMessage(message, password);
+        String unEncryptedString = encryptionService.decryptMessage(password, encryptedProperties);
 
         // then
         then(unEncryptedString).isEqualTo(message);
     }
 
-    @DisplayName("Given a message, password, and incorrect password, when encrypting, then decrption should throw error")
+    @DisplayName("Given a message, password, and incorrect password, when encrypting, then decryption should throw error")
     @Test
     void decryptMessageWithWrongPassword() throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
         //given
@@ -68,10 +67,10 @@ class EncryptionServiceTest {
         String incorrectpassword = "wrong";
 
         // when
-        EncryptedBundle encryptedBundle = encryptionService.encryptMessage(message, password);
+        EncryptedProperties encryptedProperties = encryptionService.encryptMessage(message, password);
 
         // then
         assertThatExceptionOfType(BadPaddingException.class)
-                .isThrownBy(() -> encryptionService.decryptMessage(incorrectpassword, encryptedBundle));
+                .isThrownBy(() -> encryptionService.decryptMessage(incorrectpassword, encryptedProperties));
     }
 }

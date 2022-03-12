@@ -1,10 +1,13 @@
 package com.caloger.stasher.Secured.Model;
 
-import com.caloger.stasher.Encryption.Model.EncryptedBundle;
+import com.caloger.stasher.Encryption.Model.EncryptedProperties;
 
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalTime;
 
 @Entity
 public class SecuredModel {
@@ -12,18 +15,30 @@ public class SecuredModel {
     @GeneratedValue
     Long id;
 
-    EncryptedBundle encryptedBundle;
+    private String code;
+    private String encryptedMessage;
+    private byte[] initializationVectorSeed;
+    private String salt;
+    private LocalTime expiry;
 
     public SecuredModel() {
     }
 
-    public SecuredModel(Long id, EncryptedBundle encryptedBundle) {
+    public SecuredModel(Long id, String code, String encryptedMessage, byte[] initializationVectorSeed, String salt, LocalTime expiry) {
         this.id = id;
-        this.encryptedBundle = encryptedBundle;
+        this.code = code;
+        this.encryptedMessage = encryptedMessage;
+        this.initializationVectorSeed = initializationVectorSeed;
+        this.salt = salt;
+        this.expiry = expiry;
     }
 
-    public SecuredModel(EncryptedBundle encryptedBundle) {
-        this.encryptedBundle = encryptedBundle;
+    public SecuredModel(String code, String encryptedMessage, byte[] initializationVectorSeed, String salt, LocalTime expiry) {
+        this.code = code;
+        this.encryptedMessage = encryptedMessage;
+        this.initializationVectorSeed = initializationVectorSeed;
+        this.salt = salt;
+        this.expiry = expiry;
     }
 
     public Long getId() {
@@ -34,11 +49,43 @@ public class SecuredModel {
         this.id = id;
     }
 
-    public EncryptedBundle getEncryptedBundle() {
-        return encryptedBundle;
+    public String getCode() {
+        return code;
     }
 
-    public void setEncryptedBundle(EncryptedBundle encryptedBundle) {
-        this.encryptedBundle = encryptedBundle;
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getEncryptedMessage() {
+        return encryptedMessage;
+    }
+
+    public void setEncryptedMessage(String encryptedMessage) {
+        this.encryptedMessage = encryptedMessage;
+    }
+
+    public byte[] getInitializationVectorSeed() {
+        return initializationVectorSeed;
+    }
+
+    public void setInitializationVectorSeed(byte[] initializationVectorSeed) {
+        this.initializationVectorSeed = initializationVectorSeed;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public LocalTime getExpiry() {
+        return expiry;
+    }
+
+    public void setExpiry(LocalTime expiry) {
+        this.expiry = expiry;
     }
 }
