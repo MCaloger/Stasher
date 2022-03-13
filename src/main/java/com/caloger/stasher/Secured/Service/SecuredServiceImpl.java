@@ -52,9 +52,7 @@ public class SecuredServiceImpl implements SecuredService{
                 encryptedProperties.getInitializationVectorSeed(), encryptedProperties.getSalt(), expiry);
 
         // save secured model
-        securedRepository.save(securedModel);
-
-        return securedModel;
+        return securedRepository.save(securedModel);
     }
 
     public String readSecuredByCodeWithPassword(String code, String password) throws Exception {
@@ -68,6 +66,7 @@ public class SecuredServiceImpl implements SecuredService{
                 message = "Message is missing, password was incorrect, or is no longer available.";
             }
             return message;
+
         } catch(NullPointerException exception) {
             throw new Exception("Message is missing, password was incorrect, or is no longer available.");
         } catch(Exception exception) {

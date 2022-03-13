@@ -4,9 +4,7 @@ import com.caloger.stasher.Encryption.Model.EncryptedProperties;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalTime;
 
 @Entity
@@ -15,7 +13,9 @@ public class SecuredModel {
     @GeneratedValue
     Long id;
 
+    @Column(unique=true)
     private String code;
+
     private String encryptedMessage;
     private byte[] initializationVectorSeed;
     private String salt;

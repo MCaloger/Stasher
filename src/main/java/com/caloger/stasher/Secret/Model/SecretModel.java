@@ -1,29 +1,37 @@
 package com.caloger.stasher.Secret.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalTime;
 
 @Entity
 public class SecretModel {
     @Id
     @GeneratedValue()
     private Long id;
-    private String code;
-    private String message;
 
-    public SecretModel(Long id, String code, String message) {
+    @Column(unique=true)
+    private String code;
+
+    private String message;
+    private LocalTime localTime;
+
+    public SecretModel() {
+    }
+
+    public SecretModel(Long id, String code, String message, LocalTime localTime) {
         this.id = id;
         this.code = code;
         this.message = message;
+        this.localTime = localTime;
     }
 
-    public SecretModel(String code, String message, String password) {
+    public SecretModel(String code, String message, LocalTime localTime) {
         this.code = code;
         this.message = message;
-    }
-
-    public SecretModel() {
+        this.localTime = localTime;
     }
 
     public Long getId() {
@@ -50,12 +58,11 @@ public class SecretModel {
         this.message = message;
     }
 
-    @Override
-    public String toString() {
-        return "SecretModel{" +
-                "id=" + id +
-                ", code='" + code + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+    public LocalTime getLocalTime() {
+        return localTime;
+    }
+
+    public void setLocalTime(LocalTime localTime) {
+        this.localTime = localTime;
     }
 }

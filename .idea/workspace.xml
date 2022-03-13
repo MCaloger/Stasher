@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationRequestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationResponseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Read/SecretReadRequestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Read/SecretReadResponseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Core/Configuration/CustomControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Core/Configuration/CustomControllerExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Controller/SecuredController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Controller/SecuredController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Repository/SecuredRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Repository/SecuredRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/SecretModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/SecretModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Repository/SecretRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Repository/SecretRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/SecuredModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/SecuredModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" afterDir="false" />
@@ -29,9 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -210,6 +215,7 @@
       <recent name="" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.caloger.stasher.Secret.Service" />
       <recent name="com.caloger.stasher.Encryption.Model" />
       <recent name="com.caloger.stasher.Secrets.Service" />
     </key>
@@ -217,6 +223,7 @@
       <recent name="com.caloger.stasher.Core" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.caloger.stasher.Secret.Controller" />
       <recent name="com.caloger.stasher.Secured.Controller" />
       <recent name="com.caloger.stasher.Core" />
       <recent name="com.caloger.stasher.Encryption.Service" />
@@ -411,6 +418,56 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java</url>
+          <line>34</line>
+          <properties class="com.caloger.stasher.Secret.Controller.SecretController" method="getSecretByCode">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secrets.java" />

@@ -44,7 +44,7 @@ class SecuredControllerTest {
     void getSecuredByCode() {
     }
 
-    @DisplayName("Test creation")
+    @DisplayName("Secured Creation")
     @Test
     void createSecured() throws Exception {
         // given
