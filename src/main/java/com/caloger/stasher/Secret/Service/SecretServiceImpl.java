@@ -51,7 +51,9 @@ public class SecretServiceImpl implements SecretService {
         } catch(Exception exception) {
             throw new Exception("Message is missing, password was incorrect, or is no longer available.");
         } finally {
-            deleteSecret(secretModel.getId());
+            if(secretModel != null && secretModel.getId() != null) {
+                deleteSecret(secretModel.getId());
+            }
         }
 
     }

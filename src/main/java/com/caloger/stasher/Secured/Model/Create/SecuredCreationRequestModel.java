@@ -1,5 +1,7 @@
 package com.caloger.stasher.Secured.Model.Create;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import java.time.LocalTime;
 import javax.validation.constraints.*;
 
