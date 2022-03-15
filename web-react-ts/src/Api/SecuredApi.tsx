@@ -1,12 +1,13 @@
-export async function readSecret(code: string) {
+export async function readSecured(code: string, password: string) {
     try {
-        const url = `http://localhost:8080/api/secret/code/${code}`
+        const url = `http://localhost:8080/api/secured/code/${code}`
 
         const response = await fetch(url, {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify({ password })
         })
 
         return response.json();
@@ -15,17 +16,17 @@ export async function readSecret(code: string) {
     }
 }
 
-export async function createSecret(message: string) {
+export async function createSecured(message: string, password: string) {
 
         try {
-        const url = `http://localhost:8080/api/secret/create`
+        const url = `http://localhost:8080/api/secured/create`
 
         const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({message})
+            body: JSON.stringify({ message, password })
         })
 
         const data = await response.json()
@@ -36,4 +37,3 @@ export async function createSecret(message: string) {
         }
     
 }
-

@@ -1,8 +1,7 @@
-
- // @ts-nocheck
+// @ts-nocheck
 import React, { useState, useEffect } from 'react'
 import { Outlet, useParams } from 'react-router-dom'
-import { readSecret } from '../../../api/SecretApi';
+import { readSecret } from '../../../Api/SecretApi';
 
 export default function ReadSecret() {
     const params = useParams();
@@ -27,8 +26,9 @@ export default function ReadSecret() {
     
   return (
     <>
-        { data.message }
-    <Outlet />
+        <textarea readOnly={true} value={data.message} />
+            
+        <Outlet />
     </>
   )
 }

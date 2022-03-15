@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { createSecret } from '../../../Api/SecretApi';
+import { createSecured } from '../../../Api/SecuredApi';
 
 const NewSecretFormComponent = styled.form`
     display: flex;
@@ -12,6 +14,8 @@ const MessageComponent = styled.textarea`
 `;
 
 export default function NewSecretForm() {
+
+    let navigate = useNavigate();
 
     // Textarea field
     const [message, setMessage] = useState("");
@@ -43,6 +47,16 @@ export default function NewSecretForm() {
 
     const handleSubmitClick = (event: any) => {
         event.preventDefault();
+
+        if(password !== '') {
+            createSecured(message, password).then((data: any) => {
+                navigate("/secured/created", { state: { ...data } } )
+            });
+        } else {
+            createSecret(message).then((data: any) => {
+                navigate("/secret/created", { state: { ...data } } )
+            });
+        }
     }
     
     return (
@@ -59,7 +73,6 @@ export default function NewSecretForm() {
                     <label htmlFor="passcode">Password</label>
                     <input id="passcode" name="passcode" type={passwordInputType} value={password} onChange={handlePasswordChange} autoComplete="off" />
                 </div>
-                
                 
                 <input id="show" name="show" type="checkbox" checked={checked} onChange={handleCheckChange} value="Show" autoComplete="off"/>
                 <label htmlFor="show">Show</label>
