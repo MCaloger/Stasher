@@ -6,7 +6,7 @@ export default function SecuredCreated() {
     return (
     <>
         <div>The code for the secret is { location.state.code } </div>
-        <div>Link { location.state.uri } </div>
+        <div>Link <a href={ location.state.uri }>{location.state.uri}</a>  </div>
     </>
   )
 }

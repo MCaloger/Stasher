@@ -7,7 +7,7 @@ public class SecuredCreationResponseModel {
 
     public SecuredCreationResponseModel(String domain, String code) {
         this.code = code;
-        this.uri = new StringBuilder().append(domain).append("/api/secured/code/").append(code).toString();
+        this.uri = new StringBuilder().append(domain).append("/secured/code/").append(code).toString();
     }
 
     public String getCode() {

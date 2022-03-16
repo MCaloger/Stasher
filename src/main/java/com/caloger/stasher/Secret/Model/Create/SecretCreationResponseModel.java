@@ -6,7 +6,7 @@ public class SecretCreationResponseModel {
 
     public SecretCreationResponseModel(String domain, String code) {
         this.code = code;
-        this.uri = new StringBuilder().append(domain).append("/api/secret/code/").append(code).toString();
+        this.uri = new StringBuilder().append(domain).append("/secret/code/").append(code).toString();
     }
 
     public SecretCreationResponseModel() {

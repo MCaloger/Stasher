@@ -17,6 +17,8 @@ export default function NewSecretForm() {
 
     let navigate = useNavigate();
 
+    const [error, setError] = useState("");
+
     // Textarea field
     const [message, setMessage] = useState("");
 
@@ -50,7 +52,12 @@ export default function NewSecretForm() {
 
         if(password !== '') {
             createSecured(message, password).then((data: any) => {
-                navigate("/secured/created", { state: { ...data } } )
+                if(data.errors) {
+                    setError("Message can't be blank.")
+                } else {
+                    navigate("/secured/created", { state: { ...data } } )  
+                }
+                    
             });
         } else {
             createSecret(message).then((data: any) => {
@@ -67,6 +74,7 @@ export default function NewSecretForm() {
             <div>
                 <MessageComponent name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter secret here" maxLength={1024}></MessageComponent>
                 <div>{message.length} / 1024</div>
+                <div>{error}</div>
             </div>
             <div>
                 <div>

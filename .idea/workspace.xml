@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationResponseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationResponseModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Router/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Router/Router.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/ReadSecretPage/ReadSecret.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/ReadSecretPage/ReadSecret.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/SecretCreated/SecretCreated.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/SecretCreated/SecretCreated.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/SecuredCreated/SecuredCreated.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/SecuredCreated/SecuredCreated.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
