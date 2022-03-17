@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React, { useState } from 'react'
-import { readSecured } from '../../../Api/SecuredApi';
+import { readSecured } from '../../../API/SecuredAPI';
 import { useParams, Outlet } from 'react-router-dom';
+import { MessageContainer } from '../../MessageContainer/MessageContainer';
 
 export default function ReadSecured() {
 
@@ -36,7 +37,7 @@ export default function ReadSecured() {
     const MessageDisplay = () => {
         return (
             <div>
-                <textarea readOnly value={ message }/>
+                <MessageContainer readOnly value={ message }/>
             </div>
         )
     }

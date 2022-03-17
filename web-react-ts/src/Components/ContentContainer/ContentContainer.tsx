@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 const ContainerComponent = styled.div`
     width: 50%;
     margin: auto;
+    padding-top: 10px;
 `
 
 export default function ContentContainer(props: any) {

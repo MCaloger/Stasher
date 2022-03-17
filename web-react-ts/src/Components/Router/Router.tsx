@@ -10,8 +10,7 @@ import ReadSecured from '../Secured/ReadSecured/ReadSecured'
 export default function Router() {
   return (
     <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/new" element={<NewSecretForm />} />
+        <Route path="/" element={<NewSecretForm />} />
         <Route path="/secret/code">
             <Route path=":code" element={<ReadSecret />}></Route>
         </Route>

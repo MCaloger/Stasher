@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
+import { ReactComponent as Logo } from '../../media/logo.svg'
 
 const NavContainer = styled.nav`
     width: 100%;
@@ -10,15 +11,24 @@ const NavContainer = styled.nav`
     font-weight: bold;
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+`
+
+const LogoContainer = styled.div`
+    width: auto;
+    height: 50px;
 `
 
 export default function NavigationBar() {
   return (
     <NavContainer>
-        <div>Stasher</div>
-        <Link to="/new">
-            <button>New item</button>
+        <Link to="/">
+            <LogoContainer>
+                <Logo />
+            </LogoContainer>
+            
         </Link>
     </NavContainer>
   )

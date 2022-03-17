@@ -16,7 +16,7 @@ public class SecuredCreationRequestModel {
     @NotNull(message="Password must not be blank.")
     @NotBlank(message="Password must not be blank.")
     @NotEmpty(message="Password must not be blank.")
-    @Size(min=1, max=128, message="Password must be between 1 and 128 characters.")
+    @Size(min=1, max=128, message="Password must be no longer than 128 characters.")
     private String password;
 
     private LocalTime expiry;

@@ -1,17 +1,30 @@
 import styled from '@emotion/styled'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { createSecret } from '../../../Api/SecretApi';
-import { createSecured } from '../../../Api/SecuredApi';
+import { createSecret } from '../../../API/SecretAPI';
+import { createSecured } from '../../../API/SecuredAPI';
+import { MessageContainer } from '../../MessageContainer/MessageContainer';
 
 const NewSecretFormComponent = styled.form`
     display: flex;
     flex-direction: column;
+    & > * {
+        margin=-top: 10px;
+        margin-bottom: 10px;
+    }
 `;
 
-const MessageComponent = styled.textarea`
-    width: 100%;
-`;
+const PasswordContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+
+const ErrorBox = styled.div`
+    padding: 10px;
+    color: hsl(4.11,89.62%,35.43%);
+    background: HSL(354.00,100.00%,90.20%);
+    border: 1px solid hsl(4.11,89.62%,35.43%);
+`
 
 export default function NewSecretForm() {
 
@@ -53,7 +66,7 @@ export default function NewSecretForm() {
         if(password !== '') {
             createSecured(message, password).then((data: any) => {
                 if(data.errors) {
-                    setError("Message can't be blank.")
+                    setError(data.errors[0])
                 } else {
                     navigate("/secured/created", { state: { ...data } } )  
                 }
@@ -61,29 +74,38 @@ export default function NewSecretForm() {
             });
         } else {
             createSecret(message).then((data: any) => {
-                navigate("/secret/created", { state: { ...data } } )
+                if(data.errors) {
+                    setError(data.errors[0])
+                } else {
+                    navigate("/secret/created", { state: { ...data } } )
+                }
             });
         }
     }
     
     return (
         <NewSecretFormComponent>
-            <Link to="/">Go Back</Link>
 
             <h1>New Secret</h1>
             <div>
-                <MessageComponent name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter secret here" maxLength={1024}></MessageComponent>
+                <MessageContainer name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter secret here" maxLength={1024}></MessageContainer>
                 <div>{message.length} / 1024</div>
-                <div>{error}</div>
+                
             </div>
             <div>
-                <div>
-                    <label htmlFor="passcode">Password</label>
-                    <input id="passcode" name="passcode" type={passwordInputType} value={password} onChange={handlePasswordChange} autoComplete="off" />
-                </div>
+                <label htmlFor="passcode">Password</label>
+                <PasswordContainer>
+                    
+                    <input id="passcode" name="passcode" type={passwordInputType} value={password} onChange={handlePasswordChange} autoComplete="off" maxLength={128} />
+
+                    <input id="show" name="show" type="checkbox" checked={checked} onChange={handleCheckChange} value="Show" autoComplete="off"/>
+                    <label htmlFor="show">Show</label>
+                </PasswordContainer>
                 
-                <input id="show" name="show" type="checkbox" checked={checked} onChange={handleCheckChange} value="Show" autoComplete="off"/>
-                <label htmlFor="show">Show</label>
+                
+            </div>
+            <div>
+                {error ? <ErrorBox>{error}</ErrorBox> : ""}
             </div>
             <button type="submit" onClick={handleSubmitClick}>Submit</button>
         </NewSecretFormComponent>

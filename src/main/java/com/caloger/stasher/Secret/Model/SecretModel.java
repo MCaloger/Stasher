@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 import java.time.LocalTime;
 
 @Entity
@@ -15,6 +16,7 @@ public class SecretModel {
     @Column(unique=true)
     private String code;
 
+    @Size(max=1024)
     private String message;
     private LocalTime localTime;
 

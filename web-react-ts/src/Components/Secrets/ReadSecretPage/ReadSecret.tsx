@@ -1,7 +1,10 @@
 // @ts-nocheck
 import React, { useState, useEffect } from 'react'
-import { Outlet, useParams } from 'react-router-dom'
-import { readSecret } from '../../../Api/SecretApi';
+import { Outlet, useParams, Link } from 'react-router-dom'
+import { readSecret } from '../../../API/SecretAPI';
+import styled from '@emotion/styled';
+import { MessageContainer } from '../../MessageContainer/MessageContainer';
+import CreateFooter from '../../CreateFooter/CreateFooter';
 
 export default function ReadSecret() {
     const params = useParams();
@@ -26,7 +29,10 @@ export default function ReadSecret() {
     
   return (
     <>
-        <textarea readOnly={true} value={data.message} />
+        <MessageContainer readOnly={true} value={data.message} />
+
+        <CreateFooter />
+
             
         <Outlet />
     </>
