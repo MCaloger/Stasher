@@ -67,7 +67,7 @@ class SecuredControllerTest {
         String uri = JsonPath.read(mvcResult.getResponse().getContentAsString(), "uri");
 
         then(code).isNotEmpty();
-        then(uri).isEqualTo(domain + "/api/secured/code/" + code);
+        then(uri).isEqualTo(domain + "/secured/code/" + code);
     }
 
     @DisplayName("Create secured message and then read it back, then ensure item was deleted.")
@@ -91,7 +91,7 @@ class SecuredControllerTest {
         String uri = JsonPath.read(createResult.getResponse().getContentAsString(), "uri");
 
         // ensure that uri is equal to full url
-        then(uri).isEqualTo(domain + "/api/secured/code/" + code);
+        then(uri).isEqualTo(domain + "/secured/code/" + code);
 
         // read created
 
@@ -139,7 +139,7 @@ class SecuredControllerTest {
         String code = JsonPath.read(createResult.getResponse().getContentAsString(), "code");
         String uri = JsonPath.read(createResult.getResponse().getContentAsString(), "uri");
 
-        then(uri).isEqualTo(domain + "/api/secured/code/" + code);
+        then(uri).isEqualTo(domain + "/secured/code/" + code);
 
         // read created
 

@@ -5,20 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/ApplicationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/static/css/main.c0ce3f46.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/static/css/main.c0ce3f46.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/787.d31b4c15.chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/static/js/787.d31b4c15.chunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/static/media/logo.6a2d604217bcd24ca9ea9120785872ac.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/SecretModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/SecretModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/SecuredModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/SecuredModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/ContentContainer/ContentContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/ContentContainer/ContentContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/NavigationBar/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/NavigationBar/NavigationBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Router/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Router/Router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Api/SecuredApi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Api/SecuredApi.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/CreateFooter/CreateFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/CreateFooter/CreateFooter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/ReadSecretPage/ReadSecret.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/ReadSecretPage/ReadSecret.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/ReadSecured/ReadSecured.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/ReadSecured/ReadSecured.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/SecuredCreated/SecuredCreated.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/SecuredCreated/SecuredCreated.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/api/SecretApi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/api/SecretApi.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +49,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -197,7 +214,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/caloger/stasher" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -207,10 +224,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources" />
       <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\java\com\caloger\stasher" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources\static\static" />
+      <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources\static" />
+      <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources" />
+      <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources\templates" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.caloger.stasher.Secret.Service" />
@@ -421,36 +445,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java</url>
           <line>62</line>

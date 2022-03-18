@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { readSecured } from '../../../API/SecuredAPI';
 import { useParams, Outlet } from 'react-router-dom';
 import { MessageContainer } from '../../MessageContainer/MessageContainer';
+import CreateFooter from '../../CreateFooter/CreateFooter';
 
 export default function ReadSecured() {
 
@@ -28,8 +29,12 @@ export default function ReadSecured() {
     const PasswordEntry = () => {
         return (
             <div>
-                <input type="password" value={password} onChange={handlePasswordChange} />
-                <button onClick={ handleButtonClick }>Submit</button>
+                <label htmlFor="passcode">Password</label>
+                <div>
+                    <input id="passcode" name="passcode" type="password" value={password} onChange={handlePasswordChange} />
+                    <button onClick={ handleButtonClick }>Submit</button>
+                </div>
+                
             </div>
         )
     }
@@ -45,6 +50,7 @@ export default function ReadSecured() {
   return (
     <>
         { dataRetrieved ? MessageDisplay() : PasswordEntry() }
+        <CreateFooter />
         <Outlet />
     </>
     

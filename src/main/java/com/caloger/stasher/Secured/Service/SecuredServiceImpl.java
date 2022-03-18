@@ -16,6 +16,7 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Service
@@ -45,7 +46,7 @@ public class SecuredServiceImpl implements SecuredService{
         String code = codeService.generateCode();
 
         // generate expiry
-        LocalTime expiry = LocalTime.now().plusHours(1);
+        LocalDateTime expiry = LocalDateTime.now().plusHours(1);
 
         // build secured model
         SecuredModel securedModel = new SecuredModel(code, encryptedProperties.getEncryptedMessage(),
@@ -60,7 +61,7 @@ public class SecuredServiceImpl implements SecuredService{
         String message = "";
         try {
             securedModel = securedRepository.findByCode(code);
-            if(securedModel != null) {
+            if(securedModel != null && securedModel.getExpiry().isAfter(LocalDateTime.now())) {
                 message = encryptionService.decryptMessage(password, securedModel);
             } else {
                 message = "Message is missing, password was incorrect, or is no longer available.";

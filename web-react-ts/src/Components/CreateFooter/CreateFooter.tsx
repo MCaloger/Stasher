@@ -17,7 +17,6 @@ export default function CreateFooter() {
   return (
     <FooterContainer>
         <hr />
-
         <CreateLink to="/">Create new secret</CreateLink>
     </FooterContainer>
   )

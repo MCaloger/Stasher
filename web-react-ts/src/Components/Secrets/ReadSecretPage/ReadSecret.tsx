@@ -30,10 +30,7 @@ export default function ReadSecret() {
   return (
     <>
         <MessageContainer readOnly={true} value={data.message} />
-
         <CreateFooter />
-
-            
         <Outlet />
     </>
   )

@@ -5,7 +5,8 @@ import com.caloger.stasher.Encryption.Model.EncryptedProperties;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.persistence.*;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.LocalDateTime;
 
 @Entity
 public class SecuredModel {
@@ -19,12 +20,12 @@ public class SecuredModel {
     private String encryptedMessage;
     private byte[] initializationVectorSeed;
     private String salt;
-    private LocalTime expiry;
+    private LocalDateTime expiry;
 
     public SecuredModel() {
     }
 
-    public SecuredModel(Long id, String code, String encryptedMessage, byte[] initializationVectorSeed, String salt, LocalTime expiry) {
+    public SecuredModel(Long id, String code, String encryptedMessage, byte[] initializationVectorSeed, String salt, LocalDateTime expiry) {
         this.id = id;
         this.code = code;
         this.encryptedMessage = encryptedMessage;
@@ -33,7 +34,7 @@ public class SecuredModel {
         this.expiry = expiry;
     }
 
-    public SecuredModel(String code, String encryptedMessage, byte[] initializationVectorSeed, String salt, LocalTime expiry) {
+    public SecuredModel(String code, String encryptedMessage, byte[] initializationVectorSeed, String salt, LocalDateTime expiry) {
         this.code = code;
         this.encryptedMessage = encryptedMessage;
         this.initializationVectorSeed = initializationVectorSeed;
@@ -81,11 +82,11 @@ public class SecuredModel {
         this.salt = salt;
     }
 
-    public LocalTime getExpiry() {
+    public LocalDateTime getExpiry() {
         return expiry;
     }
 
-    public void setExpiry(LocalTime expiry) {
+    public void setExpiry(LocalDateTime expiry) {
         this.expiry = expiry;
     }
 }

@@ -3,7 +3,6 @@ package com.caloger.stasher.Secret.Controller;
 import com.caloger.stasher.Core.Domain.Service.DomainService;
 import com.caloger.stasher.Secret.Model.Create.SecretCreationRequestModel;
 import com.caloger.stasher.Secret.Model.Create.SecretCreationResponseModel;
-import com.caloger.stasher.Secret.Model.Read.SecretReadRequestModel;
 import com.caloger.stasher.Secret.Model.Read.SecretReadResponseModel;
 import com.caloger.stasher.Secret.Model.SecretModel;
 import com.caloger.stasher.Secret.Service.SecretService;
@@ -40,7 +39,7 @@ public class SecretController {
 
         try {
             secretReadResponseModel.setMessage(
-                    secretService.readSecuredByCode(code));
+                    secretService.readSecretByCode(code));
             return new ResponseEntity(secretReadResponseModel, HttpStatus.OK);
         } catch(Exception exception) {
             secretReadResponseModel.setMessage(exception.getMessage());

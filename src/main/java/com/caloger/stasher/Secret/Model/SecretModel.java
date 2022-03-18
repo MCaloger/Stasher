@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -18,22 +19,23 @@ public class SecretModel {
 
     @Size(max=1024)
     private String message;
-    private LocalTime localTime;
+
+    private LocalDateTime expiry;
 
     public SecretModel() {
     }
 
-    public SecretModel(Long id, String code, String message, LocalTime localTime) {
+    public SecretModel(Long id, String code, String message, LocalDateTime expiry) {
         this.id = id;
         this.code = code;
         this.message = message;
-        this.localTime = localTime;
+        this.expiry = expiry;
     }
 
-    public SecretModel(String code, String message, LocalTime localTime) {
+    public SecretModel(String code, String message, LocalDateTime expiry) {
         this.code = code;
         this.message = message;
-        this.localTime = localTime;
+        this.expiry = expiry;
     }
 
     public Long getId() {
@@ -55,16 +57,15 @@ public class SecretModel {
     public String getMessage() {
         return message;
     }
-
     public void setMessage(String message) {
         this.message = message;
     }
 
-    public LocalTime getLocalTime() {
-        return localTime;
+    public LocalDateTime getExpiry() {
+        return expiry;
     }
 
-    public void setLocalTime(LocalTime localTime) {
-        this.localTime = localTime;
+    public void setExpiry(LocalDateTime expiry) {
+        this.expiry = expiry;
     }
 }

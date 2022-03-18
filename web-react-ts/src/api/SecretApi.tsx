@@ -1,6 +1,8 @@
+import { BaseURL } from "./Url";
+
 export async function readSecret(code: string) {
     try {
-        const url = `http://localhost:8080/api/secret/code/${code}`
+        const url = `${BaseURL}/secret/code/${code}`
 
         const response = await fetch(url, {
             method: 'GET',
@@ -18,7 +20,7 @@ export async function readSecret(code: string) {
 export async function createSecret(message: string) {
 
         try {
-        const url = `http://localhost:8080/api/secret/create`
+        const url = `${BaseURL}/secret/create`
 
         const response = await fetch(url, {
             method: 'POST',

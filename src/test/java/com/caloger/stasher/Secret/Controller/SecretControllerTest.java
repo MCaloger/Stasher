@@ -3,7 +3,6 @@ package com.caloger.stasher.Secret.Controller;
 import com.caloger.stasher.Secret.Model.Create.SecretCreationRequestModel;
 import com.caloger.stasher.Secret.Model.Read.SecretReadRequestModel;
 import com.caloger.stasher.Secret.Service.SecretService;
-import com.caloger.stasher.Secured.Service.SecuredService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.Test;
@@ -58,7 +57,7 @@ class SecretControllerTest {
         String uri = JsonPath.read(createResult.getResponse().getContentAsString(), "uri");
 
         then(code).isNotEmpty();
-        then(uri).isEqualTo(domain + "/api/secret/code/" + code);
+        then(uri).isEqualTo(domain + "/secret/code/" + code);
 
         // read created
 
@@ -80,6 +79,6 @@ class SecretControllerTest {
         then(readMessage).isEqualTo(message);
 
         // ensure item is deleted
-        then(secretService.checkIfSecuredExists(code)).isEqualTo(false);
+        then(secretService.checkIfSecretExists(code)).isEqualTo(false);
     }
 }

@@ -1,6 +1,8 @@
+import { BaseURL } from "./Url";
+
 export async function readSecured(code: string, password: string) {
     try {
-        const url = `http://localhost:8080/api/secured/code/${code}`
+        const url = `${BaseURL}/secured/code/${code}`
 
         const response = await fetch(url, {
             method: 'POST',
@@ -19,7 +21,7 @@ export async function readSecured(code: string, password: string) {
 export async function createSecured(message: string, password: string) {
 
         try {
-        const url = `http://localhost:8080/api/secured/create`
+        const url = `${BaseURL}/secured/create`
 
         const response = await fetch(url, {
             method: 'POST',

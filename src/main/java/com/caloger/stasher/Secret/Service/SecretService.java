@@ -4,8 +4,8 @@ import com.caloger.stasher.Secret.Model.SecretModel;
 
 public interface SecretService {
     public SecretModel createSecret(String message);
-    public String readSecuredByCode(String code) throws Exception;
+    public String readSecretByCode(String code) throws Exception;
     void deleteSecret(Long id);
 
-    boolean checkIfSecuredExists(String code);
+    boolean checkIfSecretExists(String code);
 }
