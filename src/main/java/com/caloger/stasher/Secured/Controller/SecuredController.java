@@ -31,7 +31,6 @@ public class SecuredController {
     }
 
     @PostMapping(value = "/code/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @CrossOrigin(origins = "http://localhost:3000")
     @ResponseBody
     public ResponseEntity<SecuredReadResponseModel> getSecuredByCode(
             @PathVariable("code") String code,
@@ -50,7 +49,6 @@ public class SecuredController {
     }
 
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    @CrossOrigin(origins = "http://localhost:3000")
     @ResponseBody
     public ResponseEntity<SecuredCreationResponseModel> createSecured (
             @Valid @NotNull @RequestBody SecuredCreationRequestModel securedModelRequest) {

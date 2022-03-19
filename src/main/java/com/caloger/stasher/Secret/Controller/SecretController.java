@@ -30,7 +30,6 @@ public class SecretController {
     }
 
     @GetMapping(value = "/code/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @CrossOrigin(origins = "http://localhost:3000")
     @ResponseBody
     public ResponseEntity<SecretReadResponseModel> getSecretByCode(
             @NotNull @PathVariable("code") String code) {
@@ -48,7 +47,6 @@ public class SecretController {
     }
 
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    @CrossOrigin(origins = "http://localhost:3000")
     @ResponseBody
     public ResponseEntity<SecretCreationResponseModel> createSecret(
             @Valid @RequestBody SecretCreationRequestModel secretCreationRequestModel) {
@@ -65,6 +63,5 @@ public class SecretController {
         } catch(Exception exception) {
             return new ResponseEntity(secretCreationResponseModel, HttpStatus.BAD_REQUEST);
         }
-
     }
 }
