@@ -86,7 +86,7 @@ export default function NewSecretForm() {
     return (
         <NewSecretFormComponent>
 
-            <h1>New Secret</h1>
+            <h1>Create a secure message:</h1>
             <div>
                 <MessageContainer name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter secret here" maxLength={1024}></MessageContainer>
                 <div>{message.length} / 1024</div>

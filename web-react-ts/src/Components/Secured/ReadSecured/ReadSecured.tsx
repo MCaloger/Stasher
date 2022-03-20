@@ -29,12 +29,11 @@ export default function ReadSecured() {
     const PasswordEntry = () => {
         return (
             <div>
-                <label htmlFor="passcode">Password</label>
+                <label htmlFor="passcode">Enter password for secured message:</label>
                 <div>
                     <input id="passcode" name="passcode" type="password" value={password} onChange={handlePasswordChange} />
                     <button onClick={ handleButtonClick }>Submit</button>
                 </div>
-                
             </div>
         )
     }
