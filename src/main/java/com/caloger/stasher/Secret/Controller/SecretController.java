@@ -29,6 +29,11 @@ public class SecretController {
         this.domainService = domainService;
     }
 
+    /**
+     * Handle reading secrets
+     * @param code
+     * @return
+     */
     @GetMapping(value = "/code/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<SecretReadResponseModel> getSecretByCode(
@@ -46,6 +51,11 @@ public class SecretController {
         }
     }
 
+    /**
+     * Handle creating secrets
+     * @param secretCreationRequestModel
+     * @return
+     */
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<SecretCreationResponseModel> createSecret(

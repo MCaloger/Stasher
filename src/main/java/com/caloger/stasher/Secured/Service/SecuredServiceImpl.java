@@ -34,6 +34,18 @@ public class SecuredServiceImpl implements SecuredService{
         this.securedRepository = securedRepository;
     }
 
+    /**
+     * Create secured message
+     * @param securedCreationRequestModel
+     * @return saved model
+     * @throws InvalidAlgorithmParameterException
+     * @throws NoSuchPaddingException
+     * @throws IllegalBlockSizeException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeySpecException
+     * @throws BadPaddingException
+     * @throws InvalidKeyException
+     */
     public SecuredModel createSecured(SecuredCreationRequestModel securedCreationRequestModel)
             throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException,
             NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
@@ -56,6 +68,13 @@ public class SecuredServiceImpl implements SecuredService{
         return securedRepository.save(securedModel);
     }
 
+    /**
+     * Read a secured message
+     * @param code
+     * @param password
+     * @return Message if password is correct and message is valid
+     * @throws Exception
+     */
     public String readSecuredByCodeWithPassword(String code, String password) throws Exception {
         SecuredModel securedModel = null;
         String message = "";
@@ -79,14 +98,28 @@ public class SecuredServiceImpl implements SecuredService{
         }
     }
 
+    /**
+     * Check if secured message exists by ID
+     * @param id
+     * @return
+     */
     public boolean checkIfSecuredExists(Long id) {
         return securedRepository.existsById(id);
     }
 
+    /**
+     * Check if secured message exosts by code
+     * @param code
+     * @return
+     */
     public boolean checkIfSecuredExists(String code) {
         return securedRepository.existsByCode(code);
     }
 
+    /**
+     * delete secured code by id
+     * @param id
+     */
     public void deleteSecured(Long id) {
         if(securedRepository.existsById(id)){
             securedRepository.deleteById(id);

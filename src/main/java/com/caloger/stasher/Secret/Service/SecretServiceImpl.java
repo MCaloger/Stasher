@@ -21,6 +21,10 @@ public class SecretServiceImpl implements SecretService {
         this.codeService = codeService;
     }
 
+    /**
+     * @param message
+     * @return SecretModel
+     */
     public SecretModel createSecret(String message) {
         // generate code
         String code = codeService.generateCode();
@@ -33,6 +37,11 @@ public class SecretServiceImpl implements SecretService {
         return secretRepository.save(secretModel);
     }
 
+    /**
+     * @param code
+     * @return Message
+     * @throws Exception
+     */
     public String readSecretByCode(String code) throws Exception {
         SecretModel secretModel = null;
         String message = "";
@@ -58,12 +67,19 @@ public class SecretServiceImpl implements SecretService {
 
     }
 
+    /**
+     * @param id
+     */
     public void deleteSecret(Long id) {
         if(secretRepository.existsById(id)) {
             secretRepository.deleteById(id);
         }
     }
 
+    /**
+     * @param code
+     * @return 
+     */
     @Override
     public boolean checkIfSecretExists(String code) {
         return secretRepository.existsByCode(code);

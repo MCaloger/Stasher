@@ -34,6 +34,10 @@ public class EncryptionService {
     @Value("${INITIALIZATION_VECTOR_LENGTH}")
     private int INITIALIZATION_VECTOR_LENGTH;
 
+    /**
+     * @return Key
+     * @throws NoSuchAlgorithmException
+     */
     private SecretKey generateKey() throws NoSuchAlgorithmException {
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         keyGenerator.init(this.KEY_LENGTH);
@@ -41,6 +45,13 @@ public class EncryptionService {
         return key;
     }
 
+    /**
+     * @param password
+     * @param salt
+     * @return Secret provided password and salt
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeySpecException
+     */
     private SecretKey generateSecretKeyFromPassword(String password, String salt)
             throws NoSuchAlgorithmException, InvalidKeySpecException {
 
@@ -51,6 +62,9 @@ public class EncryptionService {
         return secret;
     }
 
+    /**
+     * @return Initialization vector seed
+     */
     private byte[] generateInitializationVectorSeed() {
         byte[] initializationVectorSeed = new byte[INITIALIZATION_VECTOR_LENGTH];
         new SecureRandom().nextBytes(initializationVectorSeed);
@@ -61,12 +75,27 @@ public class EncryptionService {
         return new IvParameterSpec(seed);
     }
 
+    /**
+     * @return Salt
+     */
     private String generateSalt() {
         byte[] salt = new byte[KEY_LENGTH];
         new SecureRandom().nextBytes(salt);
         return salt.toString();
     }
 
+    /**
+     * @param input
+     * @param key
+     * @param initializationVectorSeed
+     * @return Encrypted string
+     * @throws NoSuchPaddingException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidAlgorithmParameterException
+     * @throws InvalidKeyException
+     * @throws BadPaddingException
+     * @throws IllegalBlockSizeException
+     */
     private String encrypt(String input, SecretKey key,
                                  byte[] initializationVectorSeed) throws NoSuchPaddingException, NoSuchAlgorithmException,
             InvalidAlgorithmParameterException, InvalidKeyException,
@@ -80,6 +109,18 @@ public class EncryptionService {
                 .encodeToString(cipherText);
     }
 
+    /**
+     * @param cipherText
+     * @param key
+     * @param initializationVectorSeed
+     * @return Message
+     * @throws NoSuchPaddingException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidAlgorithmParameterException
+     * @throws InvalidKeyException
+     * @throws BadPaddingException
+     * @throws IllegalBlockSizeException
+     */
     private String decrypt(String cipherText, SecretKey key,
                                  byte[] initializationVectorSeed) throws NoSuchPaddingException, NoSuchAlgorithmException,
             InvalidAlgorithmParameterException, InvalidKeyException,
@@ -94,7 +135,7 @@ public class EncryptionService {
     }
 
     /**
-     * Encrypts provided message wusing provided password in key.
+     * Encrypts provided message wsing provided password in key.
      * @param message
      * @param unencryptedPassword
      * @return
@@ -144,6 +185,18 @@ public class EncryptionService {
         return decrypt(encryptedProperties.getEncryptedMessage(), secretKey, encryptedProperties.getInitializationVectorSeed());
     }
 
+    /**
+     * @param password
+     * @param securedModel
+     * @return Decrypted message
+     * @throws InvalidAlgorithmParameterException
+     * @throws NoSuchPaddingException
+     * @throws IllegalBlockSizeException
+     * @throws NoSuchAlgorithmException
+     * @throws BadPaddingException
+     * @throws InvalidKeyException
+     * @throws InvalidKeySpecException
+     */
     public String decryptMessage(String password, SecuredModel securedModel) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InvalidKeySpecException {
         EncryptedProperties encryptedProperties = new EncryptedPropertiesImpl(securedModel.getEncryptedMessage(),
                 securedModel.getInitializationVectorSeed(), securedModel.getSalt());

@@ -30,6 +30,12 @@ public class SecuredController {
         this.domainService = domainService;
     }
 
+    /**
+     * Handle reading of secured message
+     * @param code
+     * @param securedReadRequestModel
+     * @return
+     */
     @PostMapping(value = "/code/{code}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<SecuredReadResponseModel> getSecuredByCode(
@@ -48,6 +54,11 @@ public class SecuredController {
         }
     }
 
+    /**
+     * Handle creation of secured message
+     * @param securedModelRequest
+     * @return
+     */
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<SecuredCreationResponseModel> createSecured (
