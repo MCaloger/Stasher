@@ -4,6 +4,7 @@ import { readSecured } from '../../../API/SecuredAPI';
 import { useParams, Outlet } from 'react-router-dom';
 import { MessageContainer } from '../../MessageContainer/MessageContainer';
 import CreateFooter from '../../CreateFooter/CreateFooter';
+import { Button, PasswordInput } from '@mantine/core';
 
 export default function ReadSecured() {
 
@@ -29,10 +30,10 @@ export default function ReadSecured() {
     const PasswordEntry = () => {
         return (
             <div>
-                <label htmlFor="passcode">Enter password for secured message:</label>
+                <label htmlFor="passcode"></label>
                 <div>
-                    <input id="passcode" name="passcode" type="password" value={password} onChange={handlePasswordChange} />
-                    <button onClick={ handleButtonClick }>Submit</button>
+                    <PasswordInput label="Enter password for secured message" id="passcode" name="passcode" value={password} onChange={handlePasswordChange}></PasswordInput>
+                    <Button onClick={ handleButtonClick }>Submit</Button>
                 </div>
             </div>
         )

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Button, PasswordInput, Textarea, TextInput } from '@mantine/core';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { createSecret } from '../../../API/SecretAPI';
@@ -24,6 +25,13 @@ const ErrorBox = styled.div`
     color: hsl(4.11,89.62%,35.43%);
     background: HSL(354.00,100.00%,90.20%);
     border: 1px solid hsl(4.11,89.62%,35.43%);
+`
+
+const CountContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 `
 
 export default function NewSecretForm() {
@@ -88,18 +96,16 @@ export default function NewSecretForm() {
 
             <h1>Create a secure message:</h1>
             <div>
-                <MessageContainer name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter secret here" maxLength={1024}></MessageContainer>
-                <div>{message.length} / 1024</div>
+                <Textarea name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter message" label="Message" maxLength={1024} required description="Maximum of 1024 characters."></Textarea>
+                <CountContainer>
+                    <div>{message.length} / 1024</div>
+                </CountContainer>
+                
                 
             </div>
             <div>
-                <label htmlFor="passcode">Password</label>
                 <PasswordContainer>
-                    
-                    <input id="passcode" name="passcode" type={passwordInputType} value={password} onChange={handlePasswordChange} autoComplete="off" maxLength={128} />
-
-                    <input id="show" name="show" type="checkbox" checked={checked} onChange={handleCheckChange} value="Show" autoComplete="off"/>
-                    <label htmlFor="show">Show</label>
+                    <PasswordInput id="passcode" name="passcode" value={password} onChange={handlePasswordChange} autoComplete="off" maxLength={128} label="Password" description="Maximum of 128 characters."/>
                 </PasswordContainer>
                 
                 
@@ -107,7 +113,11 @@ export default function NewSecretForm() {
             <div>
                 {error ? <ErrorBox>{error}</ErrorBox> : ""}
             </div>
-            <button type="submit" onClick={handleSubmitClick}>Submit</button>
+            
+            <Button type="submit" onClick={handleSubmitClick}>Submit</Button>
+            
+
+            
         </NewSecretFormComponent>
     )
 }

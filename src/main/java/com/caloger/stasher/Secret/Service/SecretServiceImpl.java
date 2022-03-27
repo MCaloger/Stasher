@@ -78,7 +78,7 @@ public class SecretServiceImpl implements SecretService {
 
     /**
      * @param code
-     * @return 
+     * @return
      */
     @Override
     public boolean checkIfSecretExists(String code) {
