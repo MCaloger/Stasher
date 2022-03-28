@@ -28,6 +28,7 @@ const ErrorBox = styled.div`
 `
 
 const CountContainer = styled.div`
+    color: grey;
     width: 100%;
     display: flex;
     flex-direction: row;

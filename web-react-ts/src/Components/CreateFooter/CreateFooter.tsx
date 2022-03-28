@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import styled from '@emotion/styled';
+import { Button } from '@mantine/core';
 
 const CreateLink = styled(Link)`
     display: flex;
@@ -17,7 +18,7 @@ export default function CreateFooter() {
   return (
     <FooterContainer>
         <hr />
-        <CreateLink to="/">Create new secret</CreateLink>
+        <CreateLink to="/"><Button>Create New Link</Button></CreateLink>
     </FooterContainer>
   )
 }
