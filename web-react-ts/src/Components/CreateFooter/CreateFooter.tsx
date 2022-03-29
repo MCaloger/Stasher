@@ -17,7 +17,6 @@ const FooterContainer = styled.div`
 export default function CreateFooter() {
   return (
     <FooterContainer>
-        <hr />
         <CreateLink to="/"><Button>Create New Link</Button></CreateLink>
     </FooterContainer>
   )

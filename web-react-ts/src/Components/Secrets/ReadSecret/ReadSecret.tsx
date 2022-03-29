@@ -5,6 +5,7 @@ import { readSecret } from '../../../API/SecretAPI';
 import styled from '@emotion/styled';
 import { MessageContainer } from '../../MessageContainer/MessageContainer';
 import CreateFooter from '../../CreateFooter/CreateFooter';
+import { Textarea } from '@mantine/core';
 
 export default function ReadSecret() {
     const params = useParams();
@@ -29,7 +30,8 @@ export default function ReadSecret() {
     
   return (
     <>
-        <MessageContainer readOnly={true} value={data.message} />
+        {/* <MessageContainer readOnly={true} value={data.message} /> */}
+        <Textarea readOnly={true} value={data.message}></Textarea>
         <CreateFooter />
         <Outlet />
     </>

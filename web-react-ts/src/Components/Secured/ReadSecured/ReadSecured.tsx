@@ -4,7 +4,7 @@ import { readSecured } from '../../../API/SecuredAPI';
 import { useParams, Outlet } from 'react-router-dom';
 import { MessageContainer } from '../../MessageContainer/MessageContainer';
 import CreateFooter from '../../CreateFooter/CreateFooter';
-import { Button, PasswordInput } from '@mantine/core';
+import { Button, PasswordInput, Text, Textarea } from '@mantine/core';
 
 export default function ReadSecured() {
 
@@ -42,7 +42,8 @@ export default function ReadSecured() {
     const MessageDisplay = () => {
         return (
             <div>
-                <MessageContainer readOnly value={ message }/>
+                {/* <MessageContainer readOnly value={ message }/> */}
+                <Textarea readOnly value={ message }></Textarea>
             </div>
         )
     }
