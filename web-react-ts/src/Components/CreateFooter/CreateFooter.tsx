@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import styled from '@emotion/styled';
-import { Button } from '@mantine/core';
+import { Button, Divider, Space } from '@mantine/core';
 
 const CreateLink = styled(Link)`
     display: flex;
@@ -17,6 +17,8 @@ const FooterContainer = styled.div`
 export default function CreateFooter() {
   return (
     <FooterContainer>
+        <Divider></Divider>
+        <Space h={10}></Space>
         <CreateLink to="/"><Button>Create New Link</Button></CreateLink>
     </FooterContainer>
   )

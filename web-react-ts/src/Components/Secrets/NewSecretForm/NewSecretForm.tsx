@@ -77,7 +77,7 @@ export default function NewSecretForm() {
                 if(data.errors) {
                     setError(data.errors[0])
                 } else {
-                    navigate("/secured/created", { state: { ...data } } )  
+                    navigate("/secret/created", { state: { ...data } } )  
                 }
                     
             });
