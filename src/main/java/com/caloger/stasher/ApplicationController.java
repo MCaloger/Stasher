@@ -9,7 +9,6 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 @Controller
 public class ApplicationController {
 
-
     /**
      * @return frontend
      */

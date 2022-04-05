@@ -1,6 +1,6 @@
 package com.caloger.stasher.Encryption.Service;
 
-import com.caloger.stasher.Encryption.Model.EncryptedProperties;
+import com.caloger.stasher.Encryption.Model.EncryptedPropertiesModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +35,7 @@ class EncryptionServiceTest {
         String password = "Test";
 
         // when
-        EncryptedProperties encryptedProperties = encryptionService.encryptMessage(message, password);
+        EncryptedPropertiesModel encryptedProperties = encryptionService.encryptMessage(message, password);
 
         // then
         then(encryptedProperties.getEncryptedMessage()).isNotBlank();
@@ -51,7 +51,7 @@ class EncryptionServiceTest {
         String password = "Test";
 
         // when
-        EncryptedProperties encryptedProperties = encryptionService.encryptMessage(message, password);
+        EncryptedPropertiesModel encryptedProperties = encryptionService.encryptMessage(message, password);
         String unEncryptedString = encryptionService.decryptMessage(password, encryptedProperties);
 
         // then
@@ -67,7 +67,7 @@ class EncryptionServiceTest {
         String incorrectpassword = "wrong";
 
         // when
-        EncryptedProperties encryptedProperties = encryptionService.encryptMessage(message, password);
+        EncryptedPropertiesModel encryptedProperties = encryptionService.encryptMessage(message, password);
 
         // then
         assertThatExceptionOfType(BadPaddingException.class)

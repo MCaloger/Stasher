@@ -1,7 +1,7 @@
 package com.caloger.stasher.Secured.Service;
 
 import com.caloger.stasher.Core.Code.Service.CodeService;
-import com.caloger.stasher.Encryption.Model.EncryptedProperties;
+import com.caloger.stasher.Encryption.Model.EncryptedPropertiesModel;
 import com.caloger.stasher.Encryption.Service.EncryptionService;
 import com.caloger.stasher.Secured.Model.SecuredModel;
 import com.caloger.stasher.Secured.Model.Create.SecuredCreationRequestModel;
@@ -17,7 +17,6 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 @Service
 public class SecuredServiceImpl implements SecuredService{
@@ -51,7 +50,7 @@ public class SecuredServiceImpl implements SecuredService{
             NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
 
         // encrypt message
-        EncryptedProperties encryptedProperties = encryptionService.encryptMessage(securedCreationRequestModel.getMessage(),
+        EncryptedPropertiesModel encryptedProperties = encryptionService.encryptMessage(securedCreationRequestModel.getMessage(),
                 securedCreationRequestModel.getPassword());
 
         // generate code

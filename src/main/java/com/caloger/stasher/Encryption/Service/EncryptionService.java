@@ -1,8 +1,6 @@
 package com.caloger.stasher.Encryption.Service;
 
-import com.caloger.stasher.Encryption.Model.EncryptedProperties;
-
-import com.caloger.stasher.Encryption.Model.EncryptedPropertiesImpl;
+import com.caloger.stasher.Encryption.Model.EncryptedPropertiesModel;
 import com.caloger.stasher.Secured.Model.SecuredModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -147,7 +145,7 @@ public class EncryptionService {
      * @throws BadPaddingException
      * @throws InvalidKeyException
      */
-    public EncryptedProperties encryptMessage(String message, String unencryptedPassword) throws NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
+    public EncryptedPropertiesModel encryptMessage(String message, String unencryptedPassword) throws NoSuchAlgorithmException, InvalidKeySpecException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
         // Generate salt
         String salt = generateSalt();
 
@@ -161,7 +159,7 @@ public class EncryptionService {
         String encryptedMessage = encrypt(message, secretKey, initializationVectorSeed);
 
         // Return the encrypted bundle
-        return new EncryptedPropertiesImpl(encryptedMessage, secretKey, initializationVectorSeed, salt);
+        return new EncryptedPropertiesModel(encryptedMessage, secretKey, initializationVectorSeed, salt);
     }
 
     /**
@@ -177,7 +175,7 @@ public class EncryptionService {
      * @throws InvalidKeyException
      * @throws InvalidKeySpecException
      */
-    public String decryptMessage(String password, EncryptedProperties encryptedProperties) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InvalidKeySpecException {
+    public String decryptMessage(String password, EncryptedPropertiesModel encryptedProperties) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InvalidKeySpecException {
         // Build key from provided password and saved salt
         SecretKey secretKey = generateSecretKeyFromPassword(password, encryptedProperties.getSalt());
 
@@ -197,9 +195,14 @@ public class EncryptionService {
      * @throws InvalidKeyException
      * @throws InvalidKeySpecException
      */
-    public String decryptMessage(String password, SecuredModel securedModel) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException, InvalidKeySpecException {
-        EncryptedProperties encryptedProperties = new EncryptedPropertiesImpl(securedModel.getEncryptedMessage(),
-                securedModel.getInitializationVectorSeed(), securedModel.getSalt());
+    public String decryptMessage(String password, SecuredModel securedModel) throws InvalidAlgorithmParameterException,
+            NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException,
+            InvalidKeyException, InvalidKeySpecException {
+
+        EncryptedPropertiesModel encryptedProperties = new EncryptedPropertiesModel(securedModel.
+                getEncryptedProperties().getEncryptedMessage(),
+                securedModel.getEncryptedProperties().getInitializationVectorSeed(),
+                securedModel.getEncryptedProperties().getSalt());
 
         // Build key from provided password and saved salt
         SecretKey secretKey = generateSecretKeyFromPassword(password, encryptedProperties.getSalt());

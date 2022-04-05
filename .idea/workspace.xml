@@ -6,22 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/css/main.c0ce3f46.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/css/main.c0ce3f46.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/787.d31b4c15.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/static/js/787.d31b4c15.chunk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/787.d31b4c15.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/static/js/787.d31b4c15.chunk.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/main.9b25faa5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/main.9b25faa5.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/main.9b25faa5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/media/logo.6a2d604217bcd24ca9ea9120785872ac.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/static/media/logo.6a2d604217bcd24ca9ea9120785872ac.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Model/EncryptedProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Model/EncryptedPropertiesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Model/EncryptedPropertiesModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Service/EncryptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Service/EncryptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/SecuredModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/SecuredModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Encryption/Service/EncryptionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Encryption/Service/EncryptionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +233,7 @@
       <recent name="com.caloger.stasher.Encryption.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StasherApplication">
+  <component name="RunManager" selected="JUnit.All in stasher">
     <configuration name="StasherApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -264,6 +257,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in stasher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="stasher" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SecuredControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Stasher" />
       <option name="PACKAGE_NAME" value="" />
@@ -277,6 +278,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in stasher" />
         <item itemvalue="Application.StasherApplication" />
         <item itemvalue="JUnit.All in Stasher" />
         <item itemvalue="JUnit.SecuredControllerTest" />

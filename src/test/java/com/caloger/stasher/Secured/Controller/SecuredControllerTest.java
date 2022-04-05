@@ -49,7 +49,6 @@ class SecuredControllerTest {
     void createSecured() throws Exception {
         // given
         SecuredCreationRequestModel securedCreationRequestModel = new SecuredCreationRequestModel("My message", "my password");
-        System.out.println("in: " + objectMapper.writeValueAsString(securedCreationRequestModel));
 
         // when
 
@@ -125,7 +124,6 @@ class SecuredControllerTest {
         String wrongPassword = "pass";
 
         SecuredCreationRequestModel securedCreationRequestModel = new SecuredCreationRequestModel(message, correctPassword);
-        System.out.println("in: " + objectMapper.writeValueAsString(securedCreationRequestModel));
 
         MvcResult createResult = mockMvc.perform(post("/api/secured/create/").contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(securedCreationRequestModel)))
