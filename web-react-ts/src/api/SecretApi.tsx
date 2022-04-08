@@ -17,7 +17,7 @@ export async function readSecret(code: string) {
     }
 }
 
-export async function createSecret(message: string) {
+export async function createSecret(message: string, expirationHours: number, expirationMinutes: number) {
 
         try {
         const url = `${BaseURL}/secret/create`
@@ -27,7 +27,7 @@ export async function createSecret(message: string) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({message})
+            body: JSON.stringify({message, expirationHours, expirationMinutes})
         })
 
         const data = await response.json()

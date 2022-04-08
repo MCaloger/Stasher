@@ -1,6 +1,7 @@
 package com.caloger.stasher.Secret.Service;
 
 import com.caloger.stasher.Core.Code.Service.CodeService;
+import com.caloger.stasher.Secret.Model.Create.SecretCreationRequestModel;
 import com.caloger.stasher.Secret.Model.SecretModel;
 import com.caloger.stasher.Secret.Repository.SecretRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,17 @@ public class SecretServiceImpl implements SecretService {
     }
 
     /**
-     * @param message
+     * @param secretCreationRequestModel
      * @return SecretModel
      */
-    public SecretModel createSecret(String message) {
+    public SecretModel createSecret(SecretCreationRequestModel secretCreationRequestModel) {
         // generate code
         String code = codeService.generateCode();
 
         // generate expiry
-        LocalDateTime expiry = LocalDateTime.now().plusHours(1);
+        LocalDateTime expiry = secretCreationRequestModel.getExpiry();
 
-        SecretModel secretModel = new SecretModel(code, message, expiry);
+        SecretModel secretModel = new SecretModel(code, secretCreationRequestModel.getMessage(), expiry);
 
         return secretRepository.save(secretModel);
     }

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Button, PasswordInput, Textarea, TextInput } from '@mantine/core';
+import { Button, Input, PasswordInput, Textarea, TextInput, NumberInput, Space, Title, Text } from '@mantine/core';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { createSecret } from '../../../API/SecretAPI';
@@ -15,7 +15,7 @@ const NewSecretFormComponent = styled.form`
     }
 `;
 
-const PasswordContainer = styled.div`
+const FormRow = styled.div`
     display: flex;
     flex-direction: row;
 `
@@ -69,11 +69,23 @@ export default function NewSecretForm() {
         }
     }
 
+    // Hours
+    const [hours, setHours] = useState(0);
+    const handleHoursChange = (event: any) => { 
+        setHours(event.target.value);
+    }
+
+    // Minutes
+    const [minutes, setMinutes] = useState(5);
+    const handleMinutesChange = (event: any) => {
+        setMinutes(event.target.value);
+    }
+
     const handleSubmitClick = (event: any) => {
         event.preventDefault();
 
         if(password !== '') {
-            createSecured(message, password).then((data: any) => {
+            createSecured(message, password, hours, minutes).then((data: any) => {
                 if(data.errors) {
                     setError(data.errors[0])
                 } else {
@@ -82,7 +94,7 @@ export default function NewSecretForm() {
                     
             });
         } else {
-            createSecret(message).then((data: any) => {
+            createSecret(message, hours, minutes).then((data: any) => {
                 if(data.errors) {
                     setError(data.errors[0])
                 } else {
@@ -95,7 +107,8 @@ export default function NewSecretForm() {
     return (
         <NewSecretFormComponent>
 
-            <h1>Create a secure message:</h1>
+            <Text color="indigo" size="xl">Create a secure message</Text>
+
             <div>
                 <Textarea name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter message" label="Message" maxLength={1024} required description="Maximum of 1024 characters."></Textarea>
                 <CountContainer>
@@ -105,9 +118,22 @@ export default function NewSecretForm() {
                 
             </div>
             <div>
-                <PasswordContainer>
+                <FormRow>
                     <PasswordInput id="passcode" name="passcode" value={password} onChange={handlePasswordChange} autoComplete="off" maxLength={128} label="Password" description="Maximum of 128 characters."/>
-                </PasswordContainer>
+                </FormRow>
+                
+                
+            </div>
+            <div>
+                <FormRow>
+                    <NumberInput min={0} max={23} value={hours} onChange={(val: number) => setHours(val)} name="hours" id="hours" label="Hours" stepHoldDelay={500}
+        stepHoldInterval={100} description="Hours to expire."/>
+
+                    <Space w="md" />
+
+                    <NumberInput min={0} max={59} value={minutes} onChange={(val: number) => setMinutes(val)} name="minutes" id="minutes" label="Minutes" stepHoldDelay={500}
+        stepHoldInterval={100} step={5} description="Minutes to expire."/>
+                </FormRow>
                 
                 
             </div>
@@ -115,7 +141,7 @@ export default function NewSecretForm() {
                 {error ? <ErrorBox>{error}</ErrorBox> : ""}
             </div>
             
-            <Button type="submit" onClick={handleSubmitClick}>Submit</Button>
+            <Button type="submit" color="indigo" onClick={handleSubmitClick}>Submit</Button>
             
 
             

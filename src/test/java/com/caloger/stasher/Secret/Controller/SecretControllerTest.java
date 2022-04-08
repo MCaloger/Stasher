@@ -42,7 +42,7 @@ class SecretControllerTest {
 
         String message = "My message.";
 
-        SecretCreationRequestModel secretCreationRequestModel = new SecretCreationRequestModel(message);
+        SecretCreationRequestModel secretCreationRequestModel = new SecretCreationRequestModel(message, 1, 0);
 
         MvcResult createResult = mockMvc.perform(post("/api/secret/create/").contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(secretCreationRequestModel)))

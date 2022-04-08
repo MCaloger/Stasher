@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
-import { ReactComponent as Logo } from '../../media/logo.svg'
+import { ReactComponent as Logo } from '../../media/logo2.svg'
 
 const NavContainer = styled.nav`
     width: 100%;
-    height: 50px;
+    height: 40px;
     padding: 10px;
     font-size: 24px;
     font-weight: bold;

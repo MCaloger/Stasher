@@ -57,7 +57,7 @@ public class SecuredServiceImpl implements SecuredService{
         String code = codeService.generateCode();
 
         // generate expiry
-        LocalDateTime expiry = LocalDateTime.now().plusHours(1);
+        LocalDateTime expiry = securedCreationRequestModel.getExpiry();
 
         // build secured model
         SecuredModel securedModel = new SecuredModel(code, encryptedProperties.getEncryptedMessage(),

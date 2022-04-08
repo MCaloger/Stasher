@@ -44,9 +44,9 @@ export default function ReadSecured() {
         return (
             <PasswordBox>
                     <PasswordInput label="Enter password for secured message" id="passcode" name="passcode" value={password} onChange={handlePasswordChange}></PasswordInput>
-                    <Space w="sm"></Space>
+                    <Space w="md"></Space>
                     <SubmitButtonBox>
-                        <Button onClick={ handleButtonClick }>Submit</Button>
+                        <Button color="indigo" onClick={ handleButtonClick }>Submit</Button>
                     </SubmitButtonBox>
                     
 

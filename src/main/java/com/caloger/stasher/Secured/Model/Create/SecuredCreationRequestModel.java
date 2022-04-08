@@ -2,6 +2,7 @@ package com.caloger.stasher.Secured.Model.Create;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import javax.validation.constraints.*;
 
@@ -19,15 +20,25 @@ public class SecuredCreationRequestModel {
     @Size(min=1, max=128, message="Password must be no longer than 128 characters.")
     private String password;
 
-    private LocalTime expiry;
+    @Min(value=0, message="Can't be less than 0 hours.")
+    @Max(value=23, message="Can't be more than 23 hours.")
+    private int expirationHours;
+
+    @Min(value=0, message="Can't be less than 0 minutes.")
+    @Max(value=59, message="Can't be more than 59 minutes.")
+    private int expirationMinutes;
+
+    private LocalDateTime expiry;
 
     public SecuredCreationRequestModel() {
     }
 
-    public SecuredCreationRequestModel(String message, String password) {
+    public SecuredCreationRequestModel(String message, String password, int expirationHours, int expirationMinutes) {
         this.message = message;
         this.password = password;
-        this.expiry = LocalTime.now().plusHours(1);
+        this.expirationHours = expirationHours;
+        this.expirationMinutes = expirationMinutes;
+        this.expiry = LocalDateTime.now().plusHours(expirationHours).plusMinutes(expirationMinutes);
     }
 
     public String getMessage() {
@@ -44,6 +55,32 @@ public class SecuredCreationRequestModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getExpirationHours() {
+        return expirationHours;
+    }
+
+    public void setExpirationHours(int expirationHours) {
+        this.expirationHours = expirationHours;
+        this.expiry = LocalDateTime.now().plusHours(expirationHours).plusMinutes(expirationMinutes);
+    }
+
+    public int getExpirationMinutes() {
+        return expirationMinutes;
+    }
+
+    public void setExpirationMinutes(int expirationMinutes) {
+        this.expirationMinutes = expirationMinutes;
+        this.expiry = LocalDateTime.now().plusHours(expirationHours).plusMinutes(expirationMinutes);
+    }
+
+    public LocalDateTime getExpiry() {
+        return expiry;
+    }
+
+    public void setExpiry(LocalDateTime expiry) {
+        this.expiry = expiry;
     }
 
     @Override

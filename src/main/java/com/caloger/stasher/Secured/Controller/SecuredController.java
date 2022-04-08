@@ -66,7 +66,9 @@ public class SecuredController {
 
         try {
             SecuredModel securedModel = securedService.createSecured(securedModelRequest);
-            SecuredCreationResponseModel securedCreationResponseModel = new SecuredCreationResponseModel(domainService.getDomain(), securedModel.getCode());
+            SecuredCreationResponseModel securedCreationResponseModel = new SecuredCreationResponseModel(
+                    domainService.getDomain(), securedModel.getCode(), securedModelRequest.getExpirationHours(),
+                    securedModelRequest.getExpirationMinutes());
             return new ResponseEntity(securedCreationResponseModel, HttpStatus.CREATED);
         } catch(Exception exception) {
             throw new ResponseStatusException(

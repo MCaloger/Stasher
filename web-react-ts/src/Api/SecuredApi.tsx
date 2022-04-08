@@ -18,7 +18,7 @@ export async function readSecured(code: string, password: string) {
     }
 }
 
-export async function createSecured(message: string, password: string) {
+export async function createSecured(message: string, password: string, expirationHours: number, expirationMinutes: number) {
 
         try {
         const url = `${BaseURL}/secured/create`
@@ -28,7 +28,7 @@ export async function createSecured(message: string, password: string) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message, password })
+            body: JSON.stringify({ message, password, expirationHours, expirationMinutes })
         })
 
         const data = await response.json()

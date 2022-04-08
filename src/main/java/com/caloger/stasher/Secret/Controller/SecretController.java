@@ -64,9 +64,9 @@ public class SecretController {
         SecretCreationResponseModel secretCreationResponseModel = new SecretCreationResponseModel();
 
         try {
-            SecretModel secretModel = secretService.createSecret(secretCreationRequestModel.getMessage());
+            SecretModel secretModel = secretService.createSecret(secretCreationRequestModel);
             secretCreationResponseModel = new SecretCreationResponseModel(domainService.getDomain(),
-                    secretModel.getCode());
+                    secretModel.getCode(), secretCreationRequestModel.getExpirationHours(), secretCreationRequestModel.getExpirationMinutes());
 
             return new ResponseEntity(secretCreationResponseModel, HttpStatus.CREATED);
 
