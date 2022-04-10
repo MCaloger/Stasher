@@ -18,7 +18,7 @@ export default function CreateFooter() {
   return (
     <FooterContainer>
         <Divider></Divider>
-        <Space h={10}></Space>
+        <Space h="md"></Space>
         <CreateLink to="/"><Button color="indigo">Create New Link</Button></CreateLink>
     </FooterContainer>
   )

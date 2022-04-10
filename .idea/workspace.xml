@@ -6,28 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationRequestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Model/Create/SecretCreationResponseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Controller/SecuredController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Controller/SecuredController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationRequestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Model/Create/SecuredCreationResponseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/css/main.c793b70f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/css/main.c793b70f.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.803f1c3b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.803f1c3b.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.803f1c3b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/media/logo.6a2d604217bcd24ca9ea9120785872ac.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/ContentContainer/ContentContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/ContentContainer/ContentContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/CreateFooter/CreateFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/CreateFooter/CreateFooter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/NavigationBar/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/NavigationBar/NavigationBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/SecretCreated/SecretCreated.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/SecretCreated/SecretCreated.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/ReadSecured/ReadSecured.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/ReadSecured/ReadSecured.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/SecuredCreated/SecuredCreated.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/SecuredCreated/SecuredCreated.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/media/typelogosource.afdesign" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/media/typelogosource.afdesign" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Router/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Router/Router.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -7,11 +7,13 @@ import { BrowserRouter } from 'react-router-dom';
 import NavigationBar from './Components/NavigationBar/NavigationBar';
 import Router from './Components/Router/Router';
 import ContentContainer from './Components/ContentContainer/ContentContainer';
+import { Space } from '@mantine/core'
 
 ReactDOM.render(
 <React.StrictMode>
 	<BrowserRouter>
 		<NavigationBar />
+		<Space h="lg" />
 		<ContentContainer>
 			<Router />
 		</ContentContainer>
