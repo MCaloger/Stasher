@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import styled from '@emotion/styled';
 import CreateFooter from '../../CreateFooter/CreateFooter';
-import { Button, SimpleGrid, TextInput, Text } from '@mantine/core';
+import { Button, SimpleGrid, TextInput, Text, Space } from '@mantine/core';
 
 const TextContainer = styled.div`
     text-align: center;
@@ -49,6 +49,8 @@ export default function SecretCreated() {
                 </SimpleGrid>
                 <p>This message will expire in {location.state.expirationHours} hour(s) and {location.state.expirationMinutes} minutes from now at {dateTime.toLocaleTimeString()} on {dateTime.toLocaleDateString()}</p>
             </TextContainer>
+
+            <Space v={lg} />
 
             <CreateFooter />
         </>

@@ -4,11 +4,14 @@ import com.caloger.stasher.Core.Code.Service.CodeService;
 import com.caloger.stasher.Secret.Model.Create.SecretCreationRequestModel;
 import com.caloger.stasher.Secret.Model.SecretModel;
 import com.caloger.stasher.Secret.Repository.SecretRepository;
+import org.hibernate.type.LocalDateType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 
 @Service
 public class SecretServiceImpl implements SecretService {
@@ -84,5 +87,17 @@ public class SecretServiceImpl implements SecretService {
     @Override
     public boolean checkIfSecretExists(String code) {
         return secretRepository.existsByCode(code);
+    }
+
+    /**
+     * Delete all expired secured secrets on a delay
+     * @return
+     */
+    @Scheduled(fixedDelay = 60*1*1000)
+    public List<SecretModel> deleteExpired() {
+
+        List<SecretModel> secretModels = secretRepository.findAllWithExpiredTimeBefore(LocalDateTime.now());
+        secretModels.forEach(secretModel -> secretRepository.deleteById(secretModel.getId()));
+        return secretModels;
     }
 }

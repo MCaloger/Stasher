@@ -1,5 +1,6 @@
 package com.caloger.stasher.Secured.Service;
 
+import com.caloger.stasher.Secret.Model.SecretModel;
 import com.caloger.stasher.Secured.Model.SecuredModel;
 import com.caloger.stasher.Secured.Model.Create.SecuredCreationRequestModel;
 
@@ -10,6 +11,7 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
+import java.util.List;
 
 public interface SecuredService {
     public SecuredModel createSecured(SecuredCreationRequestModel securedCreationRequestModel)
@@ -23,4 +25,6 @@ public interface SecuredService {
     public boolean checkIfSecuredExists(Long id);
 
     public boolean checkIfSecuredExists(String code);
+
+    List<SecuredModel> deleteExpired();
 }

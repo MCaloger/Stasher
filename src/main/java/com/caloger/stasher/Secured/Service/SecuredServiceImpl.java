@@ -3,10 +3,12 @@ package com.caloger.stasher.Secured.Service;
 import com.caloger.stasher.Core.Code.Service.CodeService;
 import com.caloger.stasher.Encryption.Model.EncryptedPropertiesModel;
 import com.caloger.stasher.Encryption.Service.EncryptionService;
+import com.caloger.stasher.Secret.Model.SecretModel;
 import com.caloger.stasher.Secured.Model.SecuredModel;
 import com.caloger.stasher.Secured.Model.Create.SecuredCreationRequestModel;
 import com.caloger.stasher.Secured.Repository.SecuredRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.BadPaddingException;
@@ -17,6 +19,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class SecuredServiceImpl implements SecuredService{
@@ -123,6 +126,18 @@ public class SecuredServiceImpl implements SecuredService{
         if(securedRepository.existsById(id)){
             securedRepository.deleteById(id);
         }
+    }
+
+    /**
+     * Delete all expired secured secrets on a delay
+     * @return
+     */
+    @Scheduled(fixedDelay = 60*1*1000)
+    public List<SecuredModel> deleteExpired() {
+
+        List<SecuredModel> securedModels = securedRepository.findAllWithExpiredTimeBefore(LocalDateTime.now());
+        securedModels.forEach(secretModel -> securedRepository.deleteById(secretModel.getId()));
+        return securedModels;
     }
 
 }
