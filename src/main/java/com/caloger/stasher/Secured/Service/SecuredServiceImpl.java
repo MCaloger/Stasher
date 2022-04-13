@@ -132,7 +132,7 @@ public class SecuredServiceImpl implements SecuredService{
      * Delete all expired secured secrets on a delay
      * @return
      */
-    @Scheduled(fixedDelay = 60*1*1000)
+    @Scheduled(fixedRateString = "${deleteSchedulerMilliseconds}")
     public List<SecuredModel> deleteExpired() {
 
         List<SecuredModel> securedModels = securedRepository.findAllWithExpiredTimeBefore(LocalDateTime.now());

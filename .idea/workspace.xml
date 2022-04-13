@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Controller/SecretController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Repository/SecretRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Repository/SecretRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secret/Service/SecretServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Repository/SecuredRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Repository/SecuredRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secured/Service/SecuredServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/StasherApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/StasherApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/SecretCreated/SecretCreated.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/SecretCreated/SecretCreated.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
