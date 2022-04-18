@@ -18,7 +18,7 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/secret")
+@RequestMapping("/api/v1/secret")
 public class SecretController {
 
     SecretService secretService;

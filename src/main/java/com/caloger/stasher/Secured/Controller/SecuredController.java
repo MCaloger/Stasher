@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @RestController
-@RequestMapping("/api/secured/")
+@RequestMapping("/api/v1/secured/")
 public class SecuredController {
 
     private final SecuredService securedService;

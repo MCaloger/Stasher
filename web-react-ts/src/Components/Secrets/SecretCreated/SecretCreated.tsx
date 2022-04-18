@@ -50,7 +50,7 @@ export default function SecretCreated() {
                 <p>This message will expire in {location.state.expirationHours} hour(s) and {location.state.expirationMinutes} minutes from now at {dateTime.toLocaleTimeString()} on {dateTime.toLocaleDateString()}</p>
             </TextContainer>
 
-            <Space v={lg} />
+            <Space h="lg" />
 
             <CreateFooter />
         </>
