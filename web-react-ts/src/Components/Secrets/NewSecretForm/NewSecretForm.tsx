@@ -35,6 +35,14 @@ const CountContainer = styled.div`
     justify-content: flex-end;
 `
 
+const PasswordContainer = styled.div`
+    display: flex;
+    width: 50%;
+    &>* {
+        flex: 1;
+    }
+`
+
 export default function NewSecretForm() {
 
     let navigate = useNavigate();
@@ -110,7 +118,7 @@ export default function NewSecretForm() {
             <Text color="indigo" size="xl">Create a secure message</Text>
 
             <div>
-                <Textarea name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter message" label="Message" maxLength={1024} required description="Maximum of 1024 characters."></Textarea>
+                <Textarea name="message" id="message" value={message} onChange={handleMessageChange} placeholder="Enter message" label="Message" autosize maxLength={1024} required description="Maximum of 1024 characters."></Textarea>
                 <CountContainer>
                     <div>{message.length} / 1024</div>
                 </CountContainer>
@@ -119,10 +127,10 @@ export default function NewSecretForm() {
             </div>
             <div>
                 <FormRow>
-                    <PasswordInput id="passcode" name="passcode" value={password} onChange={handlePasswordChange} autoComplete="off" maxLength={128} label="Password" description="Maximum of 128 characters."/>
+                    <PasswordContainer>
+                        <PasswordInput id="passcode" name="passcode" value={password} onChange={handlePasswordChange} autoComplete="off" maxLength={128} label="Password" description="Maximum of 128 characters."/>
+                    </PasswordContainer>
                 </FormRow>
-                
-                
             </div>
             <div>
                 <FormRow>

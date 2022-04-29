@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="" />
+    <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Model/EncryptedPropertiesModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Model/EncryptedPropertiesModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.05300099.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.05300099.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.05300099.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/CreateFooter/CreateFooter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/CreateFooter/CreateFooter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/NavigationBar/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/NavigationBar/NavigationBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/ReadSecret/ReadSecret.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/ReadSecret/ReadSecret.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -419,6 +431,11 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/stasher$StasherApplication.ic" NAME="StasherApplication Coverage Results" MODIFIED="1651243235217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.caloger.stasher.*</FILTER>
+    </SUITE>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secrets.java" />

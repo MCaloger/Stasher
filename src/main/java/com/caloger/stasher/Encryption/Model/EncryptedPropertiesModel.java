@@ -1,12 +1,14 @@
 package com.caloger.stasher.Encryption.Model;
 
 import javax.crypto.SecretKey;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.util.Arrays;
 
 @Embeddable
 public class EncryptedPropertiesModel {
 
+    @Column(columnDefinition = "TEXT")
     private String encryptedMessage;
     private SecretKey secretKey;
     private byte[] initializationVectorSeed;

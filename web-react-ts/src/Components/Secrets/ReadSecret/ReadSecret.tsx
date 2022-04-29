@@ -5,7 +5,7 @@ import { readSecret } from '../../../API/SecretAPI';
 import styled from '@emotion/styled';
 import { MessageContainer } from '../../MessageContainer/MessageContainer';
 import CreateFooter from '../../CreateFooter/CreateFooter';
-import { Textarea } from '@mantine/core';
+import { Textarea, Text } from '@mantine/core';
 
 export default function ReadSecret() {
     const params = useParams();
@@ -30,8 +30,10 @@ export default function ReadSecret() {
     
   return (
     <>
-        {/* <MessageContainer readOnly={true} value={data.message} /> */}
         <Textarea readOnly={true} value={data.message}></Textarea>
+        <Text color="indigo" size="xl">Instructions</Text>
+
+            <div>Your message will not be accessible again, please make sure to record any necessary information and close the tab or window when finished.</div>
         <CreateFooter />
         <Outlet />
     </>

@@ -4,12 +4,12 @@ import styled from '@emotion/styled';
 import { Button, Divider, Space } from '@mantine/core';
 
 const CreateLink = styled(Link)`
-    display: flex;
-    justify-content: center;
     text-align: center;
 `
 
 const FooterContainer = styled.div`
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
 `
