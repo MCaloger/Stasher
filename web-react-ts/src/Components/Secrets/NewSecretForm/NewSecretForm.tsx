@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Button, Input, PasswordInput, Textarea, TextInput, NumberInput, Space, Title, Text } from '@mantine/core';
+import { Button, Input, PasswordInput, Textarea, TextInput, NumberInput, Space, Title, Text, Divider } from '@mantine/core';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { createSecret } from '../../../API/SecretAPI';
@@ -142,8 +142,11 @@ export default function NewSecretForm() {
             </div>
             
             <Button type="submit" color="indigo" onClick={handleSubmitClick}>Submit</Button>
-            
 
+
+            <Text color="indigo" size="xl">Instructions</Text>
+
+            <div>Enter a message into the textbox above, optionally set a password for the message, and set an hour/minute expiry for the message, and then press submit. The message can only be acessed a single time before it is deleted. If a password is set and the password is entered incorrectly, the message will also be deleted.</div>
             
         </NewSecretFormComponent>
     )

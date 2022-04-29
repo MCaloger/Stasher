@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import styled from '@emotion/styled';
 import CreateFooter from '../../CreateFooter/CreateFooter';
-import { Button, SimpleGrid, TextInput, Text, Space } from '@mantine/core';
+import { Button, SimpleGrid, TextInput, Text, Space, Divider } from '@mantine/core';
 
 const TextContainer = styled.div`
     text-align: center;
@@ -49,6 +49,12 @@ export default function SecretCreated() {
                 </SimpleGrid>
                 <p>This message will expire in {location.state.expirationHours} hour(s) and {location.state.expirationMinutes} minutes from now at {dateTime.toLocaleTimeString()} on {dateTime.toLocaleDateString()}</p>
             </TextContainer>
+
+            <Space h="lg" />
+
+            <Text color="indigo" size="xl">Instructions</Text>
+
+            <div>Send the above link to the recipient of the message along with the password, if used. You can copy the message from the textbox or with the "Copy Link" button.</div>
 
             <Space h="lg" />
 

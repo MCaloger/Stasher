@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secured/Controller/SecuredControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +219,7 @@
       <recent name="com.caloger.stasher.Encryption.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in stasher">
+  <component name="RunManager" selected="Application.StasherApplication">
     <configuration name="StasherApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -268,8 +264,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in stasher" />
         <item itemvalue="Application.StasherApplication" />
+        <item itemvalue="JUnit.All in stasher" />
         <item itemvalue="JUnit.All in Stasher" />
         <item itemvalue="JUnit.SecuredControllerTest" />
       </list>
