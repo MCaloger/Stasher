@@ -69,7 +69,7 @@ export default function ReadSecured() {
         return (
             <div>
                 {/* <MessageContainer readOnly value={ message }/> */}
-                <Textarea readOnly value={ message }></Textarea>
+                <Textarea readOnly value={ message } autosize></Textarea>
             </div>
         )
     }

@@ -30,7 +30,7 @@ export default function ReadSecret() {
     
   return (
     <>
-        <Textarea readOnly={true} value={data.message}></Textarea>
+        <Textarea readOnly={true} value={data.message} autosize></Textarea>
         <Text color="indigo" size="xl">Instructions</Text>
 
             <div>Your message will not be accessible again, please make sure to record any necessary information and close the tab or window when finished.</div>
