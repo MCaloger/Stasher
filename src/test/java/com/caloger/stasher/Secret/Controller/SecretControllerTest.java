@@ -44,7 +44,7 @@ class SecretControllerTest {
 
         SecretCreationRequestModel secretCreationRequestModel = new SecretCreationRequestModel(message, 1, 0);
 
-        MvcResult createResult = mockMvc.perform(post("/api/secret/create/").contentType(MediaType.APPLICATION_JSON)
+        MvcResult createResult = mockMvc.perform(post("/api/v1/secret/create/").contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(secretCreationRequestModel)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andExpect(MockMvcResultMatchers.jsonPath("code").exists())
@@ -65,7 +65,7 @@ class SecretControllerTest {
         SecretReadRequestModel secretReadRequestModel = new SecretReadRequestModel(code);
 
         // perform read call
-        MvcResult readResult = mockMvc.perform(get("/api/secret/code/" + code).contentType(MediaType.APPLICATION_JSON)
+        MvcResult readResult = mockMvc.perform(get("/api/v1/secret/code/" + code).contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(secretReadRequestModel)))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("message").exists())

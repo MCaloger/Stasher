@@ -53,7 +53,7 @@ class SecuredControllerTest {
         // when
 
         // then
-        MvcResult mvcResult = mockMvc.perform(post("/api/secured/create/").contentType(MediaType.APPLICATION_JSON)
+        MvcResult mvcResult = mockMvc.perform(post("/api/v1/secured/create/").contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(securedCreationRequestModel)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andExpect(MockMvcResultMatchers.jsonPath("code").exists())
@@ -77,7 +77,7 @@ class SecuredControllerTest {
 
         SecuredCreationRequestModel securedCreationRequestModel = new SecuredCreationRequestModel(message, password, 1, 0);
 
-        MvcResult createResult = mockMvc.perform(post("/api/secured/create/").contentType(MediaType.APPLICATION_JSON)
+        MvcResult createResult = mockMvc.perform(post("/api/v1/secured/create/").contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(securedCreationRequestModel)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andExpect(MockMvcResultMatchers.jsonPath("code").exists())
@@ -98,7 +98,7 @@ class SecuredControllerTest {
         SecuredReadRequestModel securedReadRequestModel = new SecuredReadRequestModel(password);
 
         // perform read call
-        MvcResult readResult = mockMvc.perform(post("/api/secured/code/" + code).contentType(MediaType.APPLICATION_JSON)
+        MvcResult readResult = mockMvc.perform(post("/api/v1/secured/code/" + code).contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(securedReadRequestModel)))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("message").exists())
@@ -125,7 +125,7 @@ class SecuredControllerTest {
 
         SecuredCreationRequestModel securedCreationRequestModel = new SecuredCreationRequestModel(message, correctPassword, 1, 0);
 
-        MvcResult createResult = mockMvc.perform(post("/api/secured/create/").contentType(MediaType.APPLICATION_JSON)
+        MvcResult createResult = mockMvc.perform(post("/api/v1/secured/create/").contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(securedCreationRequestModel)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andExpect(MockMvcResultMatchers.jsonPath("code").exists())
@@ -143,7 +143,7 @@ class SecuredControllerTest {
 
         SecuredReadRequestModel securedReadRequestModel = new SecuredReadRequestModel(wrongPassword);
 
-        MvcResult readResult = mockMvc.perform(post("/api/secured/code/" + code).contentType(MediaType.APPLICATION_JSON)
+        MvcResult readResult = mockMvc.perform(post("/api/v1/secured/code/" + code).contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(securedReadRequestModel)))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
                 .andExpect(MockMvcResultMatchers.jsonPath("message").exists())
