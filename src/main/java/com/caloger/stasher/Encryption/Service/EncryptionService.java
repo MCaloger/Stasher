@@ -20,17 +20,10 @@ import java.util.Base64;
 @Service
 public class EncryptionService {
 
-    @Value("${KEY_LENGTH}")
-    private int KEY_LENGTH;
-
-    @Value("${ITERATION_COUNT}")
-    private int ITERATION_COUNT;
-
-    @Value("${ALGORITHM}")
-    private String ALGORITHM;
-
-    @Value("${INITIALIZATION_VECTOR_LENGTH}")
-    private int INITIALIZATION_VECTOR_LENGTH;
+    final private int KEY_LENGTH = 256;
+    final private int ITERATION_COUNT = 65536;
+    final private String ALGORITHM = "AES/CBC/PKCS5Padding";
+    final private int INITIALIZATION_VECTOR_LENGTH = 16;
 
     /**
      * @return Key

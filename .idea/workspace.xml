@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.0aaca144.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.0aaca144.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.0aaca144.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/ReadSecret/ReadSecret.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/ReadSecret/ReadSecret.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/ReadSecured/ReadSecured.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secured/ReadSecured/ReadSecured.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Core/Code/Service/CodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Core/Code/Service/CodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Service/EncryptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Service/EncryptionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,9 +202,9 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources" />
       <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources\static\static" />
       <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources\static" />
-      <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources" />
       <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources\templates" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -225,7 +222,7 @@
       <recent name="com.caloger.stasher.Encryption.Service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StasherApplication">
+  <component name="RunManager" selected="JUnit.All in stasher">
     <configuration name="StasherApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -268,10 +265,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="stasher-1.0.0.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/stasher-1.0.0.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StasherApplication" />
         <item itemvalue="JUnit.All in stasher" />
+        <item itemvalue="JAR Application.stasher-1.0.0.jar" />
+        <item itemvalue="Application.StasherApplication" />
         <item itemvalue="JUnit.All in Stasher" />
         <item itemvalue="JUnit.SecuredControllerTest" />
       </list>

@@ -8,7 +8,7 @@ import java.util.Random;
 @Service
 public class CodeService {
 
-    @Value("${CODE_LENGTH}")
+    @Value("${code_length}")
     private int CODE_LENGTH;
 
     /**
