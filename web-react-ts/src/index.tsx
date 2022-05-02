@@ -8,6 +8,7 @@ import NavigationBar from './Components/NavigationBar/NavigationBar';
 import Router from './Components/Router/Router';
 import ContentContainer from './Components/ContentContainer/ContentContainer';
 import { Space } from '@mantine/core'
+import Footer from './Components/Footer/Footer';
 
 ReactDOM.render(
 <React.StrictMode>
@@ -17,6 +18,8 @@ ReactDOM.render(
 		<ContentContainer>
 			<Router />
 		</ContentContainer>
+		<Space h="lg" />
+		<Footer
 	</BrowserRouter>
 </React.StrictMode>,
 document.getElementById('root')
