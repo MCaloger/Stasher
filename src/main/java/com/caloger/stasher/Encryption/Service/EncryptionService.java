@@ -30,7 +30,7 @@ public class EncryptionService {
      * @throws NoSuchAlgorithmException
      */
     private SecretKey generateKey() throws NoSuchAlgorithmException {
-        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+        KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
         keyGenerator.init(this.KEY_LENGTH);
         SecretKey key = keyGenerator.generateKey();
         return key;

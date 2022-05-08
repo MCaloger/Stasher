@@ -13,7 +13,7 @@ public class CodeService {
 
     /**
      * Generate a code for URLs to prevent enumeration
-     * @return Strign of n length of allowed characters
+     * @return String of n length of allowed characters
      */
     public String generateCode() {
         char[] allowedCharacters = {

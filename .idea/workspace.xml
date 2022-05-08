@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Core/Code/Service/CodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Core/Code/Service/CodeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Service/EncryptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caloger/stasher/Encryption/Service/EncryptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/caloger/stasher/Secret/Controller/SecretControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -434,6 +435,7 @@
     <SUITE FILE_PATH="coverage/stasher$StasherApplication.ic" NAME="StasherApplication Coverage Results" MODIFIED="1651243235217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.caloger.stasher.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/stasher$All_in_stasher.ic" NAME="All in stasher Coverage Results" MODIFIED="1651420102945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/caloger/stasher/Secrets.java" />
