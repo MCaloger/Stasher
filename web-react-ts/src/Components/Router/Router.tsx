@@ -22,6 +22,7 @@ export default function Router() {
           </Route>
           <Route path="/secret/created" element={ <SecretCreated /> } />
           <Route path="/secured/created" element={ <SecuredCreated /> } />
+          <Route path="*" element={ <div>404: Page not found</div> } />
       </Routes>
     </>
   )

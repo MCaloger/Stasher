@@ -17,9 +17,11 @@ ReactDOM.render(
 		<Space h="lg" />
 		<ContentContainer>
 			<Router />
+			<Space h="lg" />
+			<Footer></Footer>
 		</ContentContainer>
-		<Space h="lg" />
-		<Footer
+
+		
 	</BrowserRouter>
 </React.StrictMode>,
 document.getElementById('root')
