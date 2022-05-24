@@ -3,7 +3,7 @@ Full-stack Secret Stashing Application
 
 [Demo Link](https://stasher.caloger.com/)
 
-I created Stasher to gain some experience with encryption and security practices. The front-end is a TypeScript React app that uses React [Router](https://reactrouter.com/) for navigation.
+I created Stasher to gain some experience with encryption and security practices. The front-end is a TypeScript React app that uses [React Router](https://reactrouter.com/) for navigation.
 
 Stasher improves security by creating messages that can only be accessed once and in a one-hour time period. This improves the sharing of credentials or sensitive information over a chat application by removing plaintext passwords in a communication channel, and ensuring that credential access can only be ateempted a single time.
 
