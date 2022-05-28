@@ -13,8 +13,8 @@ const FooterContainer = styled.div`
 export default function Footer({}: Props) {
   return (
     <FooterContainer>
-		<div>🛠️ by Matthew Caloger</div>
-		<a href="https://github.com/MCaloger/Stasher">View Code</a>
+		<div>🛠️ by Matt Caloger</div>
+		<a href="https://github.com/mattcaloger/Stasher">View Code</a>
 	</FooterContainer>
   )
 }

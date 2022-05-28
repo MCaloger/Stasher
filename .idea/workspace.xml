@@ -7,16 +7,8 @@
     <list default="true" id="5c67430d-e8be-44a9-b8ef-8920fb75bff4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.4e7288f7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.4e7288f7.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/static/js/main.4e7288f7.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Router/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Router/Router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/Components/Secrets/NewSecretForm/NewSecretForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-react-ts/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-react-ts/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/stasherdb.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/stasherdb.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,6 +202,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\code\2022\Stasher" />
       <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources" />
       <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources\static\static" />
       <recent name="C:\Users\admin\Documents\code\2022\Stasher\src\main\resources\static" />
